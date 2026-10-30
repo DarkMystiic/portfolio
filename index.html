@@ -125,16 +125,40 @@
     .feature .body { padding: 28px 22px; }
     .grid, .steps { grid-template-columns: 1fr; }
     .stats { grid-template-columns: repeat(2, 1fr); }
+    .section-head { max-width: none; }
   }
-  @media (max-width: 520px) {
+  @media (max-width: 600px) {
     .wrap { padding: 0 16px; }
-    .hero { padding: 56px 0 48px; }
+    nav .wrap { height: 58px; }
+    nav .btn { padding: 8px 14px; font-size: 13px; }
+    .hero { padding: 40px 0 40px; }
+    .hero h1 { font-size: 46px; }
+    .hero p.lede { font-size: 18px; margin: 18px 0 26px; }
+    .hero .ctas, .feature .links { flex-direction: column; }
+    .hero .btn, .feature .btn { justify-content: center; width: 100%; }
+    .stats { margin-top: 44px; gap: 0 16px; }
+    .stats div { padding: 16px 0 0; }
+    .stats b { font-size: 28px; }
+    .stats span { font-size: 13px; line-height: 1.4; display: block; }
     section { padding: 64px 0; }
+    .section-head h2 { font-size: 32px; }
+    .section-head p { font-size: 16px; }
+    .feature, .grid, .offer-box, .steps { margin-top: 28px; }
+    .feature { border-radius: 20px; margin-left: -4px; margin-right: -4px; }
+    .feature .shot .badge { top: auto; bottom: 14px; left: 14px; z-index: 1; }
+    .feature .shot::after { content: ""; position: absolute; inset: auto 0 0; height: 90px; background: linear-gradient(transparent, var(--dark)); }
+    .feature .body { padding: 24px 20px 28px; gap: 28px; }
+    .feature h3 { font-size: 30px; }
+    .feature p, .feature li { font-size: 16px; }
+    .card { padding: 22px 20px; }
+    .card h3 { font-size: 23px; }
     .row { grid-template-columns: 1fr; }
-    .price { padding: 28px 22px; }
+    .price { padding: 32px 20px 24px; }
     .price .amount { font-size: 72px; }
-    .feature { border-radius: 20px; }
-    .feature h3 { font-size: 32px; }
+    .includes li { padding: 12px 0; }
+    .steps { gap: 28px; }
+    form { padding: 22px 18px; }
+    footer .wrap { flex-direction: column; gap: 6px; }
   }
 </style>
 </head>
@@ -182,7 +206,10 @@
     <article class="feature">
       <a class="shot" href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">
         <span class="badge">● Live</span>
-        <img src="assets/combatlab-hero.jpg" alt="CombatLab landing page: a big headline next to a live round clock that calls the combo 1-2-3" width="1280" height="800">
+        <picture>
+          <source media="(max-width: 600px)" srcset="assets/combatlab-phone.jpg" width="375" height="740">
+          <img src="assets/combatlab-hero.jpg" alt="CombatLab landing page: a big headline next to a live round clock that calls the combo 1-2-3" width="1280" height="800">
+        </picture>
       </a>
       <div class="body">
         <div>
