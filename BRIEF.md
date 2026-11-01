@@ -3,7 +3,7 @@
 **Job:** a Bay Area business owner texts or emails Jaylen about a website.
 **Reader:** an owner of a barbershop, gym, cleaning company, landscaping business or trade. They have no website (or a bad one). Most found Jaylen from a text he sent them, so they read it on a phone, between jobs, in under a minute.
 **5-second test:** what = websites; for whom = Bay Area local businesses; action = see the samples / get in touch.
-**Offer:** $150 one-page site (tiers later, not yet).
+**Offer:** $150 one-page site (tiers later, not yet). **2026-11-01 update (owner):** Starter $300, optional $50/mo care plan, clients anywhere in the US (Bay Area-based); gym packages on `gyms/`.
 **Contact:** email only (form + direct address); no texting or calls for now (owner, 2026-11-01). Name + city, no photo.
 
 ## Look: warm editorial, upgraded

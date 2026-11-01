@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jaylen · Websites for Bay Area businesses</title>
-<meta name="description" content="I build websites for Bay Area barbers, gyms, cleaners and trades. One page, live on every phone in 7 days, for $150.">
+<title>Jaylen · Websites for local businesses</title>
+<meta name="description" content="I build websites for barbers, gyms, cleaners and trades. Live on every phone in about a week, from $300.">
 <meta name="theme-color" content="#f6f2ea">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Websites for Bay Area businesses, $150">
-<meta property="og:description" content="Barbers, gyms, cleaners and trades: a one-page website, live on every phone in 7 days.">
+<meta property="og:title" content="Websites for local businesses, from $300">
+<meta property="og:description" content="Barbers, gyms, cleaners and trades: a website that's live on every phone in about a week.">
 <meta property="og:url" content="https://darkmystiic.github.io/portfolio/">
 <meta property="og:image" content="https://darkmystiic.github.io/portfolio/assets/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -112,6 +112,8 @@
   .shot .bar i { width: 10px; height: 10px; border-radius: 50%; background: #d6cdbf; }
   .shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
   .note { margin-top: 48px; font-size: 15px; color: var(--muted); }
+  .sample .links { display: flex; align-items: center; gap: 12px 20px; flex-wrap: wrap; }
+  .more { font-weight: 600; font-size: 15px; color: var(--accent-deep); text-underline-offset: 3px; }
 
   /* CombatLab */
   .feature { background: var(--dark); color: #f3f1ec; border-radius: 28px; overflow: hidden; margin-top: 48px; display: grid; grid-template-columns: 1.1fr 1fr; }
@@ -233,6 +235,7 @@
     <ul>
       <li><a href="#samples">Sample sites</a></li>
       <li><a href="#offer">Price</a></li>
+      <li><a href="gyms/">For gyms</a></li>
       <li><a href="#questions">Questions</a></li>
     </ul>
     <a class="btn primary" href="#contact">Get in touch</a>
@@ -244,12 +247,12 @@
   <div class="wrap">
     <div>
       <h1>Your customers are already searching for you.</h1>
-      <p class="lede">I build websites for Bay Area barbers, gyms, cleaners and trades, so the people searching find your prices, your photos and a button to book. One page, live in 7 days, $150.</p>
+      <p class="lede">I build websites for barbers, gyms, cleaners and trades, so the people searching find your prices, your photos and a button to book. Live in about a week, from $300.</p>
       <div class="ctas">
         <a class="btn primary" href="#samples">See the sample sites</a>
         <a class="btn ghost" href="#contact">Ask me a question</a>
       </div>
-      <p class="local">Based in the Bay Area. You deal with me, not an agency.</p>
+      <p class="local">Based in the Bay Area, working with businesses anywhere in the US. You deal with me, not an agency.</p>
     </div>
     <div class="stage">
       <div class="phone">
@@ -327,7 +330,7 @@
             <li>Any class books straight into the free-trial form</li>
             <li>Pricing with no small print: no contract, cancel by text</li>
           </ul>
-          <a class="btn ghost" href="samples/gym/" target="_blank" rel="noopener">Open the gym site</a>
+          <div class="links"><a class="btn ghost" href="samples/gym/" target="_blank" rel="noopener">Open the gym site</a><a class="more" href="gyms/">Run a fight gym? See gym packages</a></div>
         </div>
         <a class="shot" href="samples/gym/" target="_blank" rel="noopener" aria-label="Open the gym sample site"><div class="bar"><i></i><i></i><i></i></div><img src="assets/sample-gym.jpg" alt="Fogline gym homepage: a bold headline, Learn to fight, next to a blue-tinted sparring photo" width="1280" height="800" loading="lazy"></a>
       </article>
@@ -385,16 +388,16 @@
 <section class="offer" id="offer">
   <div class="wrap">
     <div class="head">
-      <h2>Your website, done properly, for $150.</h2>
-      <p>I'm taking on my first Bay Area clients, so you get the same care as the samples above at an introductory price.</p>
+      <h2>Your website, done properly, from $300.</h2>
+      <p>The same care as the samples above, at a fixed price you know before anything starts. Half to begin, half when it goes live.</p>
     </div>
     <div class="offer-box">
       <div class="price">
-        <span class="ribbon">Introductory price</span>
-        <div class="amount"><sup>$</sup>150</div>
-        <p class="per">One time. No monthly fee from me.</p>
+        <span class="ribbon">Starter</span>
+        <div class="amount"><sup>$</sup>300</div>
+        <p class="per">One time. Hosting is free; an optional $50/mo care plan covers changes.</p>
         <a class="btn primary" href="#contact">Start my website</a>
-        <small>Need more pages or online booking? Ask, and I'll quote it up front.</small>
+        <small>Need more pages, online booking or a redesign? Ask, and I'll quote it up front. Fight gyms: <a href="gyms/">see gym packages</a>.</small>
       </div>
       <ul class="includes">
         <li><span class="tick" aria-hidden="true">✓</span><div><b>A one-page site designed for your business</b><span>Up to 5 sections, like prices, about, photos, reviews and contact. Not a template.</span></div></li>
@@ -424,10 +427,11 @@
     <div class="head"><h2>Questions owners ask</h2></div>
     <div>
       <details><summary>Do I need to buy a domain name?</summary><p>No. Your site can go live on a free address. A name of your own, like thirdchairbarbers.com, costs about $12 a year from any domain seller, and I'll connect it for you.</p></details>
-      <details><summary>Are there monthly fees?</summary><p>Not from me, and the hosting I set up is free. The only ongoing cost is your domain, if you choose to have one.</p></details>
+      <details><summary>I already have a website.</summary><p>Same price. I rebuild it on the new design, your old site stays up while you review the new one on a private link, and we switch over on your domain once you approve it.</p></details>
+      <details><summary>Are there monthly fees?</summary><p>None required. The hosting I set up is free and your domain is about $12 a year. If you'd rather text me changes than make them yourself, there's an optional $50/mo care plan.</p></details>
       <details><summary>Who writes the words?</summary><p>I do, from what you tell me about your business. You read it, and anything that doesn't sound like you gets changed.</p></details>
       <details><summary>I don't have good photos.</summary><p>Phone photos of your work are usually enough, and I'll pick the best. Where there are gaps, I use licensed stock photos that fit.</p></details>
-      <details><summary>Can I change things later?</summary><p>Yes. Two rounds of changes are included before launch, and after that you can email me when your prices or hours change.</p></details>
+      <details><summary>Can I change things later?</summary><p>Yes. Two rounds of changes are included before launch. After that, the care plan covers changes, or I quote small changes before I start.</p></details>
       <details><summary>How long does it take?</summary><p>A first version within a few days and live in about a week, depending on how fast we go back and forth.</p></details>
     </div>
   </div>
@@ -470,8 +474,8 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Jaylen. Websites for Bay Area businesses.</span>
-    <span><a href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">CombatLab</a> · <a href="mailto:jaylendgotico@gmail.com">Email</a></span>
+    <span>© 2026 Jaylen. Websites for local businesses.</span>
+    <span><a href="gyms/">For gyms</a> · <a href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">CombatLab</a> · <a href="mailto:jaylendgotico@gmail.com">Email</a></span>
   </div>
 </footer>
 
