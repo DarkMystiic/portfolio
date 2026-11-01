@@ -34,7 +34,7 @@
 **5-second test:** what = websites that fill free-trial classes; for whom = fight gyms; action = book a call.
 **Offer:** Starter $300 · Gym Growth $1,200 (recommended) · Custom from $3,000 · optional care plan $50/mo. 50% to start, 50% at launch.
 **Memorable element:** "Member math": the owner's own membership price, retention and trial numbers → what one member is worth and how many new members pay for the site. Labelled as their numbers, not a promise.
-**Proof:** the Fogline sample live in the phone, CombatLab, and Jaylen's own love of boxing and Muay Thai.
+**Proof:** the Fogline sample live in the phone, CombatLab, and boxing and Muay Thai as Jaylen's hobbies (owner: hobbies, not "my thing").
 **Order:** hero + phone → where trials get lost (unanswered DM vs a booked class) → packages → member math → why me → how it works → questions → contact.
 
 ## Done means

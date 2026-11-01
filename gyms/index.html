@@ -111,7 +111,13 @@
   .care { margin-top: 24px; display: flex; gap: 18px; align-items: center; justify-content: space-between; flex-wrap: wrap; border: 1px dashed #cfc6b7; border-radius: 18px; padding: 18px 22px; }
   .care b { font-family: var(--display); font-size: 20px; }
   .care span { color: var(--muted); font-size: 15px; }
-  .terms { margin: 18px 0 0; font-size: 15px; color: var(--muted); }
+  .redo { margin-top: 20px; background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 26px; display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+  .redo h3 { font-size: 24px; }
+  .redo ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: r; }
+  .redo li { counter-increment: r; font-size: 15px; }
+  .redo li b { display: block; margin-bottom: 4px; }
+  .redo li b::before { content: counter(r) ". "; color: var(--accent); }
+  .redo li span { color: var(--muted); }
 
   /* member math */
   .math { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
@@ -154,14 +160,17 @@
 
   /* contact */
   .contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; }
-  .reach { display: grid; gap: 12px; margin-top: 28px; justify-items: start; }
-  .reach .mail { font-weight: 600; }
-  form { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 32px; display: grid; gap: 16px; }
+  .nb { white-space: nowrap; }
+  .head .reach { margin-top: 22px; font-size: 16px; }
+  .reach .mail { font-weight: 600; color: var(--ink); }
+  form { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 32px; display: grid; gap: 18px; align-self: start; }
+  form .opt { font-weight: 400; color: var(--muted); }
+  .picked { margin: 0; font-size: 15px; color: var(--muted); }
+  .picked b { color: var(--ink); }
   form label { font-size: 14px; font-weight: 600; display: grid; gap: 6px; }
   form input, form select, form textarea { font: 16px var(--body); padding: 13px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); width: 100%; }
   form input:focus, form select:focus, form textarea:focus { outline: none; border-color: var(--ink); }
   textarea { min-height: 110px; resize: vertical; }
-  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .form-note { font-size: 13px; color: var(--muted); margin: 0; }
 
   footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
@@ -177,6 +186,8 @@
     .hero .wrap { gap: 48px; }
     .compare, .why, .steps { grid-template-columns: 1fr; }
     .tiers { grid-template-columns: 1fr; max-width: 560px; }
+    .redo, .redo ol { grid-template-columns: 1fr; }
+    .redo { max-width: 560px; gap: 16px; }
     .tier .for { min-height: 0; }
     .math { gap: 36px; }
   }
@@ -196,7 +207,6 @@
     .tier { padding: 28px 20px 22px; }
     .care .btn { width: 100%; }
     .calc { padding: 22px 18px; }
-    .row { grid-template-columns: 1fr; }
     form { padding: 22px 18px; }
     summary { font-size: 19px; }
     footer .wrap { flex-direction: column; gap: 6px; }
@@ -336,6 +346,14 @@
     <div class="care">
       <div><b>Optional care plan, $50/mo</b><br><span>I keep the site online and make changes when your schedule, prices or coaches change. Cancel any time.</span></div>
     </div>
+    <div class="redo">
+      <h3>Already have a website?</h3>
+      <ol>
+        <li><b>Same packages, same prices.</b><span>I rebuild it on the new design and bring over your text, photos and prices.</span></li>
+        <li><b>Your old site stays up.</b><span>You review the new one on a private link while the old one keeps working.</span></li>
+        <li><b>Switch when you approve.</b><span>Same domain, no downtime, and people with your old link land on the new site.</span></li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -365,7 +383,7 @@
   <div class="wrap">
     <div class="head"><h2>Built by someone who gets your gym.</h2></div>
     <div class="why">
-      <article><h3>I love this sport</h3><p>Boxing and Muay Thai are my thing. I know what a beginner worries about before their first class (sparring, fitness, gear) and the site answers it before they have to ask.</p></article>
+      <article><h3>I'm a fan of the sport</h3><p>Boxing and Muay Thai are hobbies of mine, so I know what a beginner worries about before a first class (sparring, fitness, gear). Your site answers it before they have to ask.</p></article>
       <article><h3>I've shipped for fighters</h3><p>I built <a href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">CombatLab</a>, a Boxing and Muay Thai training app. Its website lets you hear a real training round before the app is even out.</p></article>
       <article><h3>You deal with me</h3><p>No agency, no account manager. The person on the call is the person building your site and answering your emails afterwards.</p></article>
     </div>
@@ -387,7 +405,9 @@
   <div class="wrap faq">
     <div class="head"><h2>Questions gym owners ask</h2></div>
     <div>
-      <details><summary>I already have a website.</summary><p>That's fine. I rebuild it so it works on phones and books trials, and keep your domain so nothing breaks for people who already have the link.</p></details>
+      <details><summary>I already have a website.</summary><p>Same packages and prices. I rebuild it so it works on phones and books trials, your old site stays up while you review the new one on a private link, and we switch over on your domain once you approve it.</p></details>
+      <details><summary>What counts as a round of changes?</summary><p>You send me one list of everything you want different (words, photos, colours, order) and I make all of it. Starter includes two rounds, Gym Growth three. Fixing a mistake of mine never counts as a round.</p></details>
+      <details><summary>What about changes after it's live?</summary><p>On the care plan, just text or email me and it's done within 48 hours. Without it, small changes are quoted before I start, and you can join or leave the care plan any time.</p></details>
       <details><summary>Can it work with my booking software?</summary><p>Usually. Many gym booking and membership tools have a booking link or widget I can put on the site. Connecting deeper than that is part of the Custom package, and I'll check what yours allows on the call.</p></details>
       <details><summary>Are there monthly fees?</summary><p>None required. The hosting I set up is free and your domain is about $12 a year. The $50/mo care plan is optional, for gyms that would rather text me changes than do them.</p></details>
       <details><summary>Who writes it, and what about photos?</summary><p>I write it from the call and you check that it sounds like you. Phone photos and videos of real classes beat stock photos for a gym, and I'll tell you exactly which shots to take.</p></details>
@@ -400,36 +420,17 @@
 <section id="contact" style="padding-top:0">
   <div class="wrap contact">
     <div class="head">
-      <h2>Book a free 20-minute call.</h2>
-      <p>Tell me about your gym and a few times that work. I'll reply with a time and a quick look at how your gym shows up online now, usually the same day.</p>
-      <div class="reach">
-        <span>Or email me directly:</span>
-        <a class="mail" href="mailto:jaylendgotico@gmail.com?subject=Website%20for%20my%20gym">jaylendgotico@gmail.com</a>
-      </div>
+      <h2>Book a free <span class="nb">20-minute</span> call.</h2>
+      <p>Send me your gym's name and I'll reply with a time that works for you, usually the same day.</p>
+      <p class="reach">Prefer email? <a class="mail" href="mailto:jaylendgotico@gmail.com?subject=Website%20for%20my%20gym">jaylendgotico@gmail.com</a></p>
     </div>
     <form id="contact-form">
-      <div class="row">
-        <label>Your name<input name="name" required autocomplete="name"></label>
-        <label>Gym name<input name="gym" required autocomplete="organization"></label>
-      </div>
-      <div class="row">
-        <label>City and state<input name="city" autocomplete="address-level2" placeholder="Austin, TX"></label>
-        <label>Current website <input name="site" type="url" inputmode="url" placeholder="Leave blank if none"></label>
-      </div>
-      <div class="row">
-        <label>Package
-          <select name="pkg" id="pkg">
-            <option>Not sure yet</option>
-            <option>Starter ($300)</option>
-            <option>Gym Growth ($1,200)</option>
-            <option>Custom ($3,000+)</option>
-          </select>
-        </label>
-        <label>Good times for a call<input name="times" placeholder="Weekdays after 2pm ET"></label>
-      </div>
-      <label>Anything else?<textarea name="message" placeholder="Programs you run, how new members find you now, what's not working"></textarea></label>
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Gym name and city<input name="gym" required autocomplete="organization" placeholder="Fogline Boxing, San Francisco"></label>
+      <label><span>Anything I should know? <span class="opt">(optional)</span></span><textarea name="message" placeholder="e.g. we already have a website, or we mostly get members from Instagram"></textarea></label>
+      <p class="picked" id="picked" hidden></p>
       <button class="btn primary" type="submit">Request my call</button>
-      <p class="form-note">This opens your email app with the message ready to send.</p>
+      <p class="form-note">Opens your email app with this ready to send.</p>
     </form>
   </div>
 </section>
@@ -464,15 +465,20 @@
   $("calc").addEventListener("input", calc);
   calc();
 
-  // Package buttons preselect the package in the form.
-  document.querySelectorAll("[data-pkg]").forEach((a) => a.addEventListener("click", () => ($("pkg").value = a.dataset.pkg)));
+  // A package button remembers the choice and shows it above the submit button (no extra field).
+  let pkg = "";
+  document.querySelectorAll("[data-pkg]").forEach((a) => a.addEventListener("click", () => {
+    pkg = a.dataset.pkg;
+    $("picked").innerHTML = `Asking about <b>${pkg}</b>`;
+    $("picked").hidden = false;
+  }));
 
   // No backend on static hosting: the form composes an email in the visitor's mail app.
   $("contact-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const f = new FormData(e.target);
-    const subject = `Call about a website for ${f.get("gym")}${f.get("city") ? " (" + f.get("city") + ")" : ""}`;
-    const body = `Hi Jaylen,\n\n${f.get("message") || "I'd like to talk about a website for my gym."}\n\nName: ${f.get("name")}\nGym: ${f.get("gym")}\nCity: ${f.get("city") || "-"}\nCurrent website: ${f.get("site") || "none"}\nPackage: ${f.get("pkg")}\nGood times for a call: ${f.get("times") || "-"}`;
+    const subject = `Call about a website for ${f.get("gym")}${pkg ? " · " + pkg : ""}`;
+    const body = `Hi Jaylen,\n\n${f.get("message") || "I'd like to book a call about a website for my gym."}\n\nName: ${f.get("name")}\nGym: ${f.get("gym")}${pkg ? "\nPackage: " + pkg : ""}`;
     location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 </script>
