@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Third Chair Barbers, Oakland (sample site)</title>
+<meta name="description" content="A sample website by Jaylen for a made-up Oakland barbershop: fades, tapers, beard work and hot towel shaves.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1c1714">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%236e1f1b'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='19' fill='%23f3ece0' text-anchor='middle'%3E3%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone: #f3ece0; --paper: #faf6ef; --ink: #1c1714; --soft: #6f655c; --line: #ddd2c2;
+    --ox: #6e1f1b; --ox-deep: #4f1512; --brass: #b88a3e;
+    --display: "DM Serif Display", Georgia, serif; --body: "Manrope", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bone); color: var(--ink); font: 16px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  :focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.05; margin: 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 4px; font: 700 15px var(--body); text-decoration: none; border: 0; cursor: pointer; }
+  .btn.ox { background: var(--ox); color: var(--bone); }
+  .btn.ox:hover { background: var(--ox-deep); }
+  .btn.bone { background: var(--bone); color: var(--ink); }
+  .btn.line { box-shadow: inset 0 0 0 1.5px currentColor; background: transparent; }
+
+  .sample { background: var(--ink); color: #cfc6b8; font-size: 13px; text-align: center; padding: 8px 16px; }
+  .sample a { color: var(--bone); font-weight: 700; }
+
+  header.top { position: sticky; top: 0; z-index: 5; background: rgba(28, 23, 20, .92); backdrop-filter: blur(8px); color: var(--bone); }
+  header.top .wrap { display: flex; align-items: center; gap: 24px; height: 60px; }
+  .mark { font: 24px/1 var(--display); text-decoration: none; display: flex; align-items: baseline; gap: 8px; }
+  .mark small { font: 600 12px var(--body); color: var(--brass); letter-spacing: .04em; }
+  header.top nav { display: flex; gap: 20px; margin-left: auto; font-size: 14px; font-weight: 600; }
+  header.top nav a { text-decoration: none; color: #d9cfbf; }
+  header.top nav a:hover { color: #fff; }
+  header.top .btn { min-height: 38px; padding: 0 16px; font-size: 14px; }
+
+  .hero { position: relative; color: var(--bone); background: var(--ink); overflow: hidden; }
+  .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28,23,20,.92) 0%, rgba(28,23,20,.55) 55%, rgba(28,23,20,.2) 100%); }
+  .hero .wrap { position: relative; z-index: 1; padding-top: 112px; padding-bottom: 96px; }
+  .open { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; background: rgba(243,236,224,.12); padding: 6px 12px; border-radius: 999px; margin-bottom: 22px; }
+  .open i { width: 8px; height: 8px; border-radius: 50%; background: #7bd88f; }
+  .open.closed i { background: #e0796b; }
+  .hero h1 { font-size: clamp(44px, 7vw, 84px); max-width: 13ch; }
+  .hero p { font-size: 18px; max-width: 34ch; color: #e6dccd; margin: 20px 0 30px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  section { padding: 88px 0; }
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 36px; flex-wrap: wrap; }
+  .head h2 { font-size: clamp(36px, 5vw, 56px); }
+  .head p { color: var(--soft); max-width: 36ch; margin: 0; }
+
+  .menu { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+  .item { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 10px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .item b { font: 24px/1.2 var(--display); font-weight: 400; }
+  .item .dots { border-bottom: 2px dotted #c4b6a2; transform: translateY(-5px); }
+  .item .p { font: 24px var(--display); color: var(--ox); }
+  .item span.d { grid-column: 1 / -1; color: var(--soft); font-size: 14px; margin-top: -4px; }
+
+  .strip { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 10px; height: 380px; }
+  .strip img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+
+  .crew { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .barber { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 24px; }
+  .barber .ini { width: 56px; height: 56px; border-radius: 50%; background: var(--ox); color: var(--bone); display: grid; place-items: center; font: 26px var(--display); }
+  .barber h3 { font-size: 28px; margin: 16px 0 4px; }
+  .barber .since { color: var(--brass); font-weight: 700; font-size: 13px; }
+  .barber p { color: var(--soft); margin: 10px 0 18px; font-size: 15px; }
+  .barber button { background: none; border: 0; padding: 0; font: 700 15px var(--body); color: var(--ox); cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+
+  .reviews { background: var(--ox); color: var(--bone); }
+  .reviews .head p { color: #e2c9c2; }
+  .score { font: 64px/1 var(--display); }
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  blockquote { margin: 0; font: 22px/1.35 var(--display); }
+  blockquote footer { font: 600 14px var(--body); color: #e2c9c2; margin-top: 14px; }
+  .stars { color: #e3c387; letter-spacing: 2px; font-size: 14px; margin-bottom: 10px; }
+
+  .book { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+  .book form { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 28px; display: grid; gap: 20px; }
+  fieldset { border: 0; padding: 0; margin: 0; }
+  legend, label { font-weight: 700; font-size: 14px; margin-bottom: 8px; display: block; }
+  select, input { width: 100%; font: 16px var(--body); padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 4px; background: #fff; color: var(--ink); }
+  select:focus, input:focus { outline: none; border-color: var(--ox); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips button { font: 600 14px var(--body); padding: 9px 13px; border-radius: 4px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; min-width: 64px; }
+  .chips button[aria-pressed="true"] { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+  .chips button:disabled { opacity: .35; cursor: not-allowed; text-decoration: line-through; }
+  .done { display: none; background: #e9f3ea; border: 1px solid #b9d7bd; border-radius: 4px; padding: 14px 16px; font-size: 15px; }
+  .done.show { display: block; }
+
+  .visit { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .hours { width: 100%; border-collapse: collapse; }
+  .hours td { padding: 11px 0; border-bottom: 1px solid var(--line); }
+  .hours td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+  .hours tr.today td { font-weight: 700; color: var(--ox); }
+  .map { background: var(--ink); color: var(--bone); border-radius: 6px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; min-height: 300px; background-image: linear-gradient(rgba(243,236,224,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(243,236,224,.06) 1px, transparent 1px); background-size: 28px 28px; }
+  .map address { font: 30px/1.15 var(--display); font-style: normal; }
+  .map p { color: #cfc6b8; margin: 8px 0 0; }
+
+  footer.end { background: var(--ink); color: #a99f92; font-size: 14px; padding: 28px 0; }
+  footer.end .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  @media (max-width: 860px) {
+    header.top nav { display: none; }
+    header.top .btn { margin-left: auto; }
+    .menu, .book, .visit { grid-template-columns: 1fr; gap: 0 0; }
+    .book, .visit { gap: 32px; }
+    .crew, .quotes { grid-template-columns: 1fr; }
+    .strip { grid-template-columns: 1fr 1fr; height: auto; }
+    .strip img { height: 180px; }
+    .strip img:first-child { grid-column: 1 / -1; height: 220px; }
+  }
+  @media (max-width: 520px) {
+    .hero .wrap { padding-top: 72px; padding-bottom: 64px; }
+    .hero .ctas .btn { flex: 1 1 100%; }
+    section { padding: 64px 0; }
+    .book form { padding: 20px; }
+  }
+  .framed { scrollbar-width: none; }
+  .framed::-webkit-scrollbar { display: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+<script>if (window.self !== window.top) document.documentElement.classList.add('framed');</script>
+</head>
+<body>
+
+<div class="sample">Sample site by Jaylen. Third Chair is a made-up business. <a href="../../#contact" target="_top">Get a site like this</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">Third Chair <small>Barbers</small></a>
+    <nav aria-label="Main">
+      <a href="#menu">Prices</a>
+      <a href="#crew">Barbers</a>
+      <a href="#visit">Hours</a>
+    </nav>
+    <a class="btn ox" href="#book">Book a chair</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1600&q=70&auto=format&fit=crop" alt="" fetchpriority="high">
+    <div class="wrap">
+      <span class="open" id="open"><i></i><span>Open today until 7 pm</span></span>
+      <h1>Sharp cuts on Telegraph since 2014.</h1>
+      <p>Fades, tapers, beard work and hot towel shaves in North Oakland. Walk in before 3, or book your chair in under a minute.</p>
+      <div class="ctas">
+        <a class="btn bone" href="#book">Book a chair</a>
+        <a class="btn line" href="tel:+15105550142">Call (510) 555-0142</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="head">
+        <h2>Prices</h2>
+        <p>Every cut includes a hot towel, a line-up and a style. Card, cash or tap.</p>
+      </div>
+      <div class="menu">
+        <div class="item"><b>Fade</b><i class="dots"></i><span class="p">$40</span><span class="d">Skin, low, mid or high. 45 minutes.</span></div>
+        <div class="item"><b>Cut &amp; beard</b><i class="dots"></i><span class="p">$55</span><span class="d">Any cut plus a shaped, lined beard.</span></div>
+        <div class="item"><b>Taper &amp; scissor cut</b><i class="dots"></i><span class="p">$40</span><span class="d">Longer on top, clean on the sides.</span></div>
+        <div class="item"><b>Hot towel shave</b><i class="dots"></i><span class="p">$45</span><span class="d">Straight razor, two hot towels, cold finish.</span></div>
+        <div class="item"><b>Beard trim</b><i class="dots"></i><span class="p">$25</span><span class="d">Shape, line and oil. 20 minutes.</span></div>
+        <div class="item"><b>Kids, under 12</b><i class="dots"></i><span class="p">$30</span><span class="d">Patient barbers, no rush.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="strip">
+      <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1000&q=70&auto=format&fit=crop" alt="A barber lining up a client's hairline with a straight razor" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=700&q=70&auto=format&fit=crop" alt="Clippers, scissors and a comb laid out on a slate board" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&q=70&auto=format&fit=crop" alt="A client sitting in a barber chair mid-cut" loading="lazy">
+    </div>
+  </div>
+
+  <section id="crew">
+    <div class="wrap">
+      <div class="head">
+        <h2>Three chairs, three barbers</h2>
+        <p>Pick who you like, or take whoever's free first.</p>
+      </div>
+      <div class="crew">
+        <article class="barber"><div class="ini" aria-hidden="true">M</div><h3>Marcus</h3><span class="since">Owner, cutting since 2009</span><p>Skin fades and sharp line-ups. Ask him about the shop's name.</p><button type="button" data-barber="Marcus">Book with Marcus</button></article>
+        <article class="barber"><div class="ini" aria-hidden="true">D</div><h3>Dee</h3><span class="since">Cutting since 2015</span><p>Curls, tapers and scissor work. Great with first-timers and kids.</p><button type="button" data-barber="Dee">Book with Dee</button></article>
+        <article class="barber"><div class="ini" aria-hidden="true">R</div><h3>Rafa</h3><span class="since">Cutting since 2018</span><p>Beards and hot towel shaves. Quietest chair in the shop.</p><button type="button" data-barber="Rafa">Book with Rafa</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="wrap">
+      <div class="head">
+        <div><div class="score">4.9</div><p>from 312 Google reviews</p></div>
+        <p>What regulars say after the mirror.</p>
+      </div>
+      <div class="quotes">
+        <blockquote><div class="stars" aria-label="5 stars">★★★★★</div>Best fade I've had in the East Bay, and Marcus remembers exactly how I like it.<footer>Andre T., regular since 2019</footer></blockquote>
+        <blockquote><div class="stars" aria-label="5 stars">★★★★★</div>Dee took her time with my son's first real haircut. He walked out grinning.<footer>Priya S.</footer></blockquote>
+        <blockquote><div class="stars" aria-label="5 stars">★★★★★</div>Booked on my phone at lunch, in and out by 1:45. Clean shop, good music.<footer>Jordan K.</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap book">
+      <div class="head" style="display:block">
+        <h2>Book your chair</h2>
+        <p style="margin-top:14px">Pick a cut, a barber and a time. You'll get a text to confirm. Running late? Text us and we'll hold it 10 minutes.</p>
+      </div>
+      <form id="bookForm" novalidate>
+        <div>
+          <label for="svc">Service</label>
+          <select id="svc"><option>Fade ($40)</option><option>Cut &amp; beard ($55)</option><option>Taper &amp; scissor cut ($40)</option><option>Hot towel shave ($45)</option><option>Beard trim ($25)</option><option>Kids, under 12 ($30)</option></select>
+        </div>
+        <fieldset><legend>Barber</legend><div class="chips" id="barbers"></div></fieldset>
+        <fieldset><legend>Day</legend><div class="chips" id="days"></div></fieldset>
+        <fieldset><legend>Time</legend><div class="chips" id="times"></div></fieldset>
+        <div><label for="ph">Your mobile number</label><input id="ph" type="tel" autocomplete="tel" placeholder="(510) 555-0100"></div>
+        <button class="btn ox" type="submit">Request this time</button>
+        <p class="done" id="done" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="visit" style="padding-top:0">
+    <div class="wrap visit">
+      <div>
+        <div class="head"><h2>Hours</h2></div>
+        <table class="hours" id="hours"></table>
+      </div>
+      <div class="map">
+        <div><address>5112 Telegraph Ave<br>Oakland, CA 94609</address><p>Street parking on 51st. Two blocks from the MacArthur BART bike path.</p></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn bone" href="#book">Book a chair</a><a class="btn line" href="tel:+15105550142">Call the shop</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="end"><div class="wrap"><span>Third Chair Barbers, Oakland</span><span>Sample site designed and built by <a href="../../" target="_top">Jaylen</a></span></div></footer>
+
+<script>
+  const HOURS = [null, [10, 19], [10, 19], [10, 19], [10, 20], [9, 20], [9, 17]]; // Sun..Sat, null = closed
+  const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const fmt = (h) => `${h % 12 || 12} ${h < 12 ? "am" : "pm"}`;
+  const now = new Date();
+
+  // Hours table with today highlighted, and the live open/closed pill.
+  document.getElementById("hours").innerHTML = [1, 2, 3, 4, 5, 6, 0].map((d) =>
+    `<tr class="${d === now.getDay() ? "today" : ""}"><td>${DAYS[d]}</td><td>${HOURS[d] ? fmt(HOURS[d][0]) + " to " + fmt(HOURS[d][1]) : "Closed"}</td></tr>`).join("");
+  const today = HOURS[now.getDay()], h = now.getHours() + now.getMinutes() / 60, pill = document.getElementById("open");
+  if (today && h >= today[0] && h < today[1]) pill.lastElementChild.textContent = `Open now until ${fmt(today[1])}`;
+  else {
+    pill.classList.add("closed");
+    let n = 1; while (!HOURS[(now.getDay() + n) % 7]) n++;
+    const next = HOURS[(now.getDay() + n) % 7];
+    pill.lastElementChild.textContent = today && h < today[0] ? `Opens today at ${fmt(today[0])}` : `Closed now, opens ${n === 1 ? "tomorrow" : DAYS[(now.getDay() + n) % 7]} at ${fmt(next[0])}`;
+  }
+
+  // Booking: one-tap chips. Nothing is sent; this is a sample.
+  const pick = (box, btn) => { box.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", b === btn)); };
+  const chips = (box, items) => {
+    box.innerHTML = items.map((t) => `<button type="button" aria-pressed="false" ${t.off ? "disabled" : ""}>${t.label}</button>`).join("");
+    box.onclick = (e) => { const b = e.target.closest("button"); if (b && !b.disabled) pick(box, b); };
+  };
+  const barbers = document.getElementById("barbers");
+  chips(barbers, ["First free", "Marcus", "Dee", "Rafa"].map((label) => ({ label })));
+  pick(barbers, barbers.firstElementChild);
+  const days = [];
+  for (let i = 0; days.length < 6 && i < 10; i++) {
+    const d = new Date(now); d.setDate(now.getDate() + i);
+    if (HOURS[d.getDay()]) days.push({ label: i === 0 ? "Today" : i === 1 ? "Tomorrow" : d.toLocaleDateString("en-US", { weekday: "short", day: "numeric" }) });
+  }
+  chips(document.getElementById("days"), days);
+  pick(document.getElementById("days"), document.querySelector("#days button"));
+  const taken = new Set(["11:00", "1:30", "4:00"]);
+  chips(document.getElementById("times"), ["10:00", "11:00", "12:30", "1:30", "2:45", "4:00", "5:15", "6:00"].map((label) => ({ label, off: taken.has(label) })));
+
+  document.querySelectorAll("[data-barber]").forEach((b) => b.addEventListener("click", () => {
+    pick(barbers, [...barbers.children].find((c) => c.textContent === b.dataset.barber));
+    document.getElementById("book").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }));
+
+  document.getElementById("bookForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const sel = (id) => document.querySelector(`#${id} [aria-pressed="true"]`)?.textContent;
+    const done = document.getElementById("done");
+    if (!sel("times")) { done.style.background = "#fbeee6"; done.style.borderColor = "#e8c3ad"; done.textContent = "Pick a time to request your chair."; done.classList.add("show"); return; }
+    done.removeAttribute("style");
+    done.textContent = `Requested: ${document.getElementById("svc").value.split(" (")[0]} with ${sel("barbers") === "First free" ? "the first free barber" : sel("barbers")}, ${sel("days")} at ${sel("times")}. On a real site you'd get a confirmation text; this sample sends nothing.`;
+    done.classList.add("show");
+  });
+</script>
+</body>
+</html>

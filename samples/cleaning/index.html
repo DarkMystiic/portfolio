@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brightwell Home Cleaning, Peninsula (sample site)</title>
+<meta name="description" content="A sample website by Jaylen for a made-up Peninsula house-cleaning company, with an instant price estimate.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0f4c5c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%230f4c5c'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ffcf5c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #ffffff; --mist: #f2f8f6; --ink: #10282e; --soft: #587076; --line: #dce9e5;
+    --teal: #0f4c5c; --teal-deep: #0a3843; --mint: #d6efe4; --sun: #ffcf5c;
+    --font: "Figtree", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--white); color: var(--ink); font: 17px/1.6 var(--font); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  :focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 8px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-weight: 800; line-height: 1.08; letter-spacing: -.025em; margin: 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font: 700 16px var(--font); text-decoration: none; border: 0; cursor: pointer; }
+  .btn.teal { background: var(--teal); color: #fff; }
+  .btn.teal:hover { background: var(--teal-deep); }
+  .btn.sun { background: var(--sun); color: var(--ink); }
+  .btn.soft { background: var(--mint); color: var(--teal); }
+
+  .sample { background: var(--ink); color: #b5c7cb; font-size: 13px; text-align: center; padding: 8px 16px; }
+  .sample a { color: var(--sun); font-weight: 700; }
+
+  header.top { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; gap: 24px; height: 64px; }
+  .mark { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; text-decoration: none; color: var(--teal); }
+  .mark i { width: 26px; height: 26px; border-radius: 9px; background: var(--teal); display: grid; place-items: center; }
+  .mark i::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--sun); }
+  header.top nav { display: flex; gap: 22px; margin-left: auto; font-weight: 600; font-size: 15px; color: var(--soft); }
+  header.top nav a { text-decoration: none; }
+  header.top nav a:hover { color: var(--teal); }
+  header.top .btn { min-height: 40px; padding: 0 18px; font-size: 15px; }
+
+  .hero { padding: 56px 0 72px; background: linear-gradient(var(--mist), var(--white)); }
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: clamp(44px, 6vw, 72px); color: var(--teal); }
+  .hero p { font-size: 19px; color: var(--soft); max-width: 32ch; margin: 20px 0 28px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .trust { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 28px; font-size: 15px; font-weight: 600; }
+  .trust span::before { content: "✓"; color: var(--teal); background: var(--mint); border-radius: 50%; width: 20px; height: 20px; display: inline-grid; place-items: center; font-size: 12px; margin-right: 8px; }
+  .hero figure { margin: 0; position: relative; }
+  .hero figure img { width: 100%; aspect-ratio: 4 / 4.4; object-fit: cover; border-radius: 28px; }
+  .rating { position: absolute; left: -20px; bottom: 28px; background: #fff; border-radius: 18px; padding: 14px 18px; box-shadow: 0 12px 32px rgba(16, 40, 46, .14); display: flex; gap: 12px; align-items: center; }
+  .rating b { font-size: 30px; color: var(--teal); }
+  .rating span { font-size: 14px; color: var(--soft); line-height: 1.35; }
+  .rating span em { font-style: normal; color: #e6a700; letter-spacing: 1px; }
+
+  section { padding: 88px 0; }
+  h2 { font-size: clamp(34px, 4.6vw, 52px); color: var(--teal); }
+  .lead { color: var(--soft); max-width: 44ch; margin: 14px 0 36px; font-size: 18px; }
+
+  /* the estimator */
+  .est { display: grid; grid-template-columns: 1.15fr 1fr; background: var(--mist); border-radius: 28px; overflow: hidden; }
+  .est .ins { padding: 36px; display: grid; gap: 26px; }
+  .est h3 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 10px; letter-spacing: 0; }
+  .seg { display: flex; flex-wrap: wrap; gap: 8px; }
+  .seg button { font: 600 15px var(--font); padding: 10px 16px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .seg button:disabled { opacity: .4; cursor: not-allowed; }
+  .step { display: flex; align-items: center; gap: 14px; }
+  .step button { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--line); background: #fff; font: 700 20px var(--font); color: var(--teal); cursor: pointer; }
+  .step button:disabled { opacity: .35; cursor: not-allowed; }
+  .step output { font-size: 22px; font-weight: 800; min-width: 28px; text-align: center; font-variant-numeric: tabular-nums; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .est .out { background: var(--teal); color: #fff; padding: 36px; display: flex; flex-direction: column; }
+  .est .out .label { color: #a9d3cf; font-weight: 600; }
+  .est .out .price { font-size: clamp(64px, 8vw, 96px); font-weight: 800; letter-spacing: -.04em; line-height: 1; margin: 10px 0 4px; font-variant-numeric: tabular-nums; }
+  .est .out .price.bump { animation: bump .3s ease-out; }
+  @keyframes bump { from { transform: scale(1.06); color: var(--sun); } to { transform: none; } }
+  .est .out .per { color: #cfe6e3; }
+  .est .out ul { list-style: none; padding: 0; margin: 24px 0 28px; display: grid; gap: 8px; font-size: 15px; color: #e3f1ef; }
+  .est .out li::before { content: "✓"; color: var(--sun); margin-right: 10px; font-weight: 800; }
+  .est .out .btn { margin-top: auto; }
+  .est .out small { display: block; margin-top: 12px; color: #a9d3cf; font-size: 13px; }
+
+  .rooms { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center; }
+  .rooms img { border-radius: 28px; width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
+  .roomtabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .roomtabs button { font: 700 15px var(--font); padding: 10px 18px; border-radius: 999px; border: 0; background: var(--mist); color: var(--soft); cursor: pointer; }
+  .roomtabs button[aria-selected="true"] { background: var(--mint); color: var(--teal); }
+  .checklist { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 28px; }
+  .checklist li { break-inside: avoid; padding: 10px 0 10px 30px; position: relative; border-bottom: 1px solid var(--line); font-size: 16px; }
+  .checklist li::before { content: ""; position: absolute; left: 0; top: 14px; width: 18px; height: 18px; border-radius: 6px; background: var(--mint); box-shadow: inset 0 0 0 2px var(--teal); }
+  .checklist li.deep { color: var(--soft); }
+  .checklist li.deep::after { content: "Deep clean"; font-size: 12px; font-weight: 700; color: var(--teal); background: var(--mint); border-radius: 999px; padding: 2px 8px; margin-left: 8px; }
+
+  .area { background: var(--teal); color: #fff; border-radius: 28px; padding: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .area h2 { color: #fff; }
+  .area p { color: #cfe6e3; margin: 14px 0 0; }
+  .towns { display: flex; flex-wrap: wrap; gap: 8px; align-content: start; }
+  .towns span { background: rgba(255,255,255,.1); padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: 15px; }
+  .zip { display: flex; gap: 8px; margin-top: 22px; flex-wrap: wrap; }
+  .zip input { flex: 1 1 140px; font: 17px var(--font); padding: 12px 16px; border-radius: 999px; border: 0; }
+  .zip-msg { margin-top: 10px; font-weight: 600; min-height: 1.6em; }
+
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .q { background: var(--mist); border-radius: 22px; padding: 26px; }
+  .q p { margin: 10px 0 16px; font-size: 17px; }
+  .q .who { font-weight: 700; font-size: 15px; }
+  .q .who span { display: block; font-weight: 500; color: var(--soft); }
+  .q em { font-style: normal; color: #e6a700; letter-spacing: 1px; }
+
+  .ask { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; }
+  form { background: var(--mist); border-radius: 28px; padding: 32px; display: grid; gap: 16px; }
+  label { font-weight: 700; font-size: 15px; display: grid; gap: 6px; }
+  input, textarea { font: 17px var(--font); padding: 13px 16px; border-radius: 14px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); width: 100%; }
+  input:focus, textarea:focus { outline: none; border-color: var(--teal); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .summary { background: #fff; border-radius: 14px; padding: 12px 16px; font-weight: 600; color: var(--teal); }
+  .done { display: none; background: var(--mint); border-radius: 14px; padding: 14px 16px; font-weight: 600; color: var(--teal); }
+  .done.show { display: block; }
+  .promise { background: var(--sun); border-radius: 22px; padding: 22px 24px; margin-top: 28px; font-weight: 600; }
+
+  footer.end { border-top: 1px solid var(--line); padding: 32px 0; color: var(--soft); font-size: 15px; }
+  footer.end .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  @media (max-width: 900px) {
+    header.top nav { display: none; }
+    header.top .btn { margin-left: auto; }
+    .hero .wrap, .est, .rooms, .area, .ask { grid-template-columns: 1fr; }
+    .hero .wrap { gap: 36px; }
+    .rating { left: 16px; }
+    .quotes { grid-template-columns: 1fr; }
+    .rooms img { order: -1; }
+  }
+  @media (max-width: 520px) {
+    section { padding: 64px 0; }
+    .hero { padding: 36px 0 48px; }
+    .hero .ctas .btn { flex: 1 1 100%; }
+    .est { border-radius: 22px; }
+    .est .ins, .est .out { padding: 24px 20px; }
+    .two, .row { grid-template-columns: 1fr; }
+    .checklist { columns: 1; }
+    .area { padding: 28px 22px; border-radius: 22px; }
+    form { padding: 22px 18px; }
+  }
+  .framed { scrollbar-width: none; }
+  .framed::-webkit-scrollbar { display: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .est .out .price.bump { animation: none; } }
+</style>
+<script>if (window.self !== window.top) document.documentElement.classList.add('framed');</script>
+</head>
+<body>
+
+<div class="sample">Sample site by Jaylen. Brightwell is a made-up business. <a href="../../#contact" target="_top">Get a site like this</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top"><i aria-hidden="true"></i>Brightwell</a>
+    <nav aria-label="Main"><a href="#price">Prices</a><a href="#included">What's included</a><a href="#area">Where we clean</a></nav>
+    <a class="btn teal" href="#price">Get my price</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Come home to a clean house.</h1>
+        <p>Weekly, every-other-week and one-time cleans from San Mateo to Palo Alto. See your price in 20 seconds, no phone call needed.</p>
+        <div class="ctas">
+          <a class="btn teal" href="#price">See my price</a>
+          <a class="btn soft" href="tel:+16505550133">Call (650) 555-0133</a>
+        </div>
+        <div class="trust"><span>Same cleaner every visit</span><span>We bring the supplies</span><span>Insured and background-checked</span></div>
+      </div>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?w=1100&q=70&auto=format&fit=crop" alt="A cleaner mopping a bright, modern living room" fetchpriority="high">
+        <div class="rating"><b>4.9</b><span><em>★★★★★</em><br>186 reviews on Google</span></div>
+      </figure>
+    </div>
+  </div>
+
+  <section id="price">
+    <div class="wrap">
+      <h2>Your price, right now</h2>
+      <p class="lead">Tell us about your home. The price you see is the price you pay, unless the job is very different when we arrive.</p>
+      <div class="est">
+        <div class="ins">
+          <div><h3>Type of clean</h3><div class="seg" id="kind"></div></div>
+          <div class="two">
+            <div><h3>Bedrooms</h3><div class="step" data-key="beds"></div></div>
+            <div><h3>Bathrooms</h3><div class="step" data-key="baths"></div></div>
+          </div>
+          <div><h3>How often</h3><div class="seg" id="freq"></div></div>
+        </div>
+        <div class="out" aria-live="polite">
+          <span class="label" id="outLabel">Standard clean</span>
+          <div class="price" id="outPrice">$0</div>
+          <span class="per" id="outPer">per visit</span>
+          <ul id="outList"></ul>
+          <a class="btn sun" href="#book">Book this clean</a>
+          <small>Estimated time on site is shown above. Nothing is charged until after your clean.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="included" style="padding-top:0">
+    <div class="wrap rooms">
+      <img src="https://images.unsplash.com/photo-1757387240036-d7eb9b096c40?w=1000&q=70&auto=format&fit=crop" alt="A spotless white kitchen with stainless steel appliances" loading="lazy">
+      <div>
+        <h2>What we clean</h2>
+        <p class="lead" style="margin-bottom:24px">The same checklist every visit, so nothing depends on who shows up.</p>
+        <div class="roomtabs" role="tablist" id="roomtabs"></div>
+        <ul class="checklist" id="checklist"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="area" style="padding-top:0">
+    <div class="wrap">
+      <div class="area">
+        <div>
+          <h2>Where we clean</h2>
+          <p>Ten Peninsula towns, so we're never more than 25 minutes away. Not sure? Check your ZIP code.</p>
+          <form class="zip" id="zipForm" style="background:none;padding:0;border-radius:0;display:flex">
+            <input id="zip" inputmode="numeric" maxlength="5" placeholder="ZIP code" aria-label="ZIP code" autocomplete="postal-code">
+            <button class="btn sun" type="submit">Check</button>
+          </form>
+          <div class="zip-msg" id="zipMsg" role="status"></div>
+        </div>
+        <div class="towns">
+          <span>San Mateo</span><span>Burlingame</span><span>Millbrae</span><span>San Carlos</span><span>Belmont</span><span>Foster City</span><span>Redwood City</span><span>Menlo Park</span><span>Atherton</span><span>Palo Alto</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Neighbours say</h2>
+      <p class="lead">Real words from regular customers.</p>
+      <div class="quotes">
+        <div class="q"><em>★★★★★</em><p>Same cleaner, Rosa, every two weeks for three years. She knows the house better than we do.</p><div class="who">Karen L.<span>Burlingame, every 2 weeks</span></div></div>
+        <div class="q"><em>★★★★★</em><p>Booked a move-out clean on a Sunday night, they came Tuesday, and we got our full deposit back.</p><div class="who">Marcus D.<span>Redwood City, move-out</span></div></div>
+        <div class="q"><em>★★★★★</em><p>The price on the website was exactly what I paid. No upsell at the door.</p><div class="who">Aisha P.<span>San Mateo, deep clean</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" style="padding-top:0">
+    <div class="wrap ask">
+      <div>
+        <h2>Book your clean</h2>
+        <p class="lead">We'll text you within the hour to pick a day. Most first cleans happen within the week.</p>
+        <div class="promise">Missed a spot? Tell us within 48 hours and we come back to redo it, free.</div>
+      </div>
+      <form id="bookForm">
+        <div class="summary" id="summary"></div>
+        <div class="row">
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Mobile number<input name="phone" type="tel" required autocomplete="tel" placeholder="(650) 555-0100"></label>
+        </div>
+        <label>Street address<input name="addr" required autocomplete="street-address"></label>
+        <label>Anything we should know?<textarea name="notes" rows="3" placeholder="Pets, parking, rooms to skip..."></textarea></label>
+        <button class="btn teal" type="submit">Request my clean</button>
+        <p class="done" id="done" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="end"><div class="wrap"><span>Brightwell Home Cleaning, serving the Peninsula. (650) 555-0133</span><span>Sample site designed and built by <a href="../../" target="_top">Jaylen</a></span></div></footer>
+
+<script>
+  // Pricing model: base + per room, scaled by type, discounted by frequency.
+  const KINDS = { standard: ["Standard", 1, "Regular upkeep"], deep: ["Deep", 1.6, "Baseboards, inside appliances, grime"], move: ["Move-out", 1.9, "Empty home, inside every cabinet"] };
+  const FREQ = { once: ["One time", 0], monthly: ["Monthly", .1], biweekly: ["Every 2 weeks", .15], weekly: ["Weekly", .2] };
+  const state = { kind: "standard", freq: "biweekly", beds: 2, baths: 2 };
+  const LIMITS = { beds: [0, 6], baths: [1, 5] };
+
+  function seg(id, map, key) {
+    const box = document.getElementById(id);
+    box.innerHTML = Object.entries(map).map(([k, v]) => `<button type="button" data-v="${k}">${v[0]}${v[1] && key === "freq" ? ` <small>(-${v[1] * 100}%)</small>` : ""}</button>`).join("");
+    box.onclick = (e) => { const b = e.target.closest("button"); if (b) { state[key] = b.dataset.v; render(); } };
+  }
+  seg("kind", KINDS, "kind");
+  seg("freq", FREQ, "freq");
+  document.querySelectorAll(".step").forEach((el) => {
+    const k = el.dataset.key;
+    el.innerHTML = `<button type="button" aria-label="Fewer ${k === "beds" ? "bedrooms" : "bathrooms"}">−</button><output></output><button type="button" aria-label="More ${k === "beds" ? "bedrooms" : "bathrooms"}">+</button>`;
+    const [minus, , plus] = el.children;
+    minus.onclick = () => { state[k]--; render(); };
+    plus.onclick = () => { state[k]++; render(); };
+  });
+
+  let last = 0;
+  function render() {
+    for (const [k, [lo, hi]] of Object.entries(LIMITS)) {
+      const el = document.querySelector(`.step[data-key="${k}"]`);
+      el.querySelector("output").textContent = state[k] === 0 && k === "beds" ? "Studio" : state[k];
+      el.children[0].disabled = state[k] <= lo; el.children[2].disabled = state[k] >= hi;
+    }
+    // Move-out is always one time.
+    if (state.kind === "move") state.freq = "once";
+    document.querySelectorAll("#kind button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.v === state.kind));
+    document.querySelectorAll("#freq button").forEach((b) => { b.setAttribute("aria-pressed", b.dataset.v === state.freq); b.disabled = state.kind === "move" && b.dataset.v !== "once"; });
+
+    const [kName, mult, kNote] = KINDS[state.kind], [fName, off] = FREQ[state.freq];
+    const price = Math.round(((95 + state.beds * 30 + state.baths * 25) * mult * (1 - off)) / 5) * 5;
+    const hours = Math.max(2, Math.round((1.5 + state.beds * .5 + state.baths * .5) * mult * 2) / 2);
+    const out = document.getElementById("outPrice");
+    out.textContent = `$${price}`;
+    if (last && last !== price) { out.classList.remove("bump"); void out.offsetWidth; out.classList.add("bump"); }
+    last = price;
+    document.getElementById("outLabel").textContent = `${kName} clean, ${state.beds || "studio"}${state.beds ? " bed" : ""} / ${state.baths} bath`;
+    document.getElementById("outPer").textContent = state.freq === "once" ? "one visit" : `per visit, ${fName.toLowerCase()}`;
+    document.getElementById("outList").innerHTML = [`About ${hours} hours with one cleaner`, kNote, off ? `You save ${off * 100}% for booking ${fName.toLowerCase()}` : "Switch to a regular clean any time to save up to 20%"].map((t) => `<li>${t}</li>`).join("");
+    document.getElementById("summary").textContent = `${kName} clean, $${price} ${state.freq === "once" ? "one time" : fName.toLowerCase()}`;
+  }
+  render();
+
+  // Checklist by room.
+  const ROOMS = {
+    Kitchen: [["Counters and backsplash"], ["Outside of appliances"], ["Sink scrubbed and shined"], ["Floors vacuumed and mopped"], ["Inside the oven", 1], ["Inside the fridge", 1]],
+    Bathrooms: [["Toilet, inside and out"], ["Shower and tub scrubbed"], ["Mirrors and fixtures"], ["Floors mopped"], ["Grout scrubbed", 1], ["Cabinet fronts wiped", 1]],
+    "Living & bedrooms": [["Dusting, high and low"], ["Beds made"], ["Vacuum rugs and floors"], ["Trash emptied"], ["Baseboards wiped", 1], ["Window sills and tracks", 1]],
+  };
+  const rt = document.getElementById("roomtabs");
+  rt.innerHTML = Object.keys(ROOMS).map((r) => `<button type="button" role="tab" data-r="${r}">${r}</button>`).join("");
+  const room = (r) => {
+    rt.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b.dataset.r === r));
+    document.getElementById("checklist").innerHTML = ROOMS[r].map(([t, deep]) => `<li class="${deep ? "deep" : ""}">${t}</li>`).join("");
+  };
+  rt.onclick = (e) => { const b = e.target.closest("button"); if (b) room(b.dataset.r); };
+  room("Kitchen");
+
+  // ZIP check.
+  const ZIPS = { "94401": "San Mateo", "94402": "San Mateo", "94403": "San Mateo", "94010": "Burlingame", "94030": "Millbrae", "94070": "San Carlos", "94002": "Belmont", "94404": "Foster City", "94061": "Redwood City", "94062": "Redwood City", "94063": "Redwood City", "94025": "Menlo Park", "94027": "Atherton", "94301": "Palo Alto", "94303": "Palo Alto", "94306": "Palo Alto" };
+  document.getElementById("zipForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const z = document.getElementById("zip").value.trim(), msg = document.getElementById("zipMsg");
+    if (!/^\d{5}$/.test(z)) msg.textContent = "Enter a 5-digit ZIP code.";
+    else msg.textContent = ZIPS[z] ? `Yes, we clean in ${ZIPS[z]}.` : "That's outside our area for now. Call us and we'll recommend someone.";
+  });
+
+  document.getElementById("bookForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const done = document.getElementById("done");
+    done.textContent = `Thanks, ${new FormData(e.target).get("name").split(" ")[0]}. A real Brightwell site would text you within the hour; this sample sends nothing.`;
+    done.classList.add("show");
+  });
+</script>
+</body>
+</html>

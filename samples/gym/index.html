@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fogline Boxing &amp; Muay Thai, San Francisco (sample site)</title>
+<meta name="description" content="A sample website by Jaylen for a made-up San Francisco fight gym: boxing, Muay Thai and kids classes, first class free.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#121212">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231f45d6'/%3E%3Cpath d='M7 20h18M7 14h12' stroke='%23efeee9' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --chalk: #efeee9; --white: #fbfbf8; --ink: #121212; --soft: #5d5d58; --line: #d9d8d1;
+    --cobalt: #1f45d6; --cobalt-deep: #1534a8; --volt: #d4f53c;
+    --font: "Archivo", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--chalk); color: var(--ink); font: 16px/1.6 var(--font); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-stretch: 125%; font-weight: 900; line-height: .95; letter-spacing: -.02em; margin: 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; font: 800 15px var(--font); font-stretch: 112%; text-decoration: none; border: 0; cursor: pointer; border-radius: 2px; }
+  .btn.go { background: var(--volt); color: var(--ink); }
+  .btn.go:hover { background: #c4e62a; }
+  .btn.blue { background: var(--cobalt); color: #fff; }
+  .btn.blue:hover { background: var(--cobalt-deep); }
+  .btn.ghost { box-shadow: inset 0 0 0 2px currentColor; background: transparent; }
+
+  .sample { background: var(--ink); color: #b9b9b2; font-size: 13px; text-align: center; padding: 8px 16px; }
+  .sample a { color: var(--volt); font-weight: 700; }
+
+  header.top { position: sticky; top: 0; z-index: 5; background: var(--chalk); border-bottom: 2px solid var(--ink); }
+  header.top .wrap { display: flex; align-items: center; gap: 24px; height: 62px; }
+  .mark { font-weight: 900; font-stretch: 125%; font-size: 20px; text-decoration: none; letter-spacing: -.02em; }
+  .mark span { color: var(--cobalt); }
+  header.top nav { display: flex; gap: 22px; margin-left: auto; font-weight: 700; font-size: 14px; }
+  header.top nav a { text-decoration: none; }
+  header.top nav a:hover { color: var(--cobalt); }
+  header.top .btn { min-height: 40px; padding: 0 16px; font-size: 14px; }
+
+  .hero { display: grid; grid-template-columns: 1.05fr 1fr; min-height: 560px; border-bottom: 2px solid var(--ink); }
+  .hero .copy { padding: 72px 48px 64px max(20px, calc((100vw - 1120px) / 2 + 20px)); display: flex; flex-direction: column; justify-content: center; }
+  .hero h1 { font-size: clamp(52px, 7.5vw, 104px); }
+  .hero h1 span { display: block; color: var(--cobalt); }
+  .hero p { font-size: 18px; color: var(--soft); max-width: 34ch; margin: 22px 0 30px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero figure { margin: 0; position: relative; background: var(--ink); }
+  .hero figure img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); mix-blend-mode: luminosity; }
+  .hero figure::after { content: ""; position: absolute; inset: 0; background: var(--cobalt); mix-blend-mode: multiply; opacity: .55; }
+  .hero figcaption { position: absolute; z-index: 1; left: 20px; bottom: 20px; background: var(--volt); color: var(--ink); font-weight: 800; font-size: 14px; padding: 8px 12px; }
+
+  section { padding: 88px 0; }
+  h2 { font-size: clamp(40px, 5.5vw, 68px); }
+  .lead { color: var(--soft); max-width: 46ch; margin: 16px 0 40px; font-size: 17px; }
+
+  .tabs { display: flex; gap: 0; border: 2px solid var(--ink); width: max-content; max-width: 100%; overflow-x: auto; }
+  .tabs button { font: 800 15px var(--font); font-stretch: 110%; padding: 12px 16px; border: 0; border-right: 2px solid var(--ink); background: var(--white); color: var(--ink); cursor: pointer; min-width: 56px; }
+  .tabs button:last-child { border-right: 0; }
+  .tabs button[aria-selected="true"] { background: var(--ink); color: var(--volt); }
+  .classes { margin-top: 20px; border-top: 2px solid var(--ink); }
+  .cls { display: grid; grid-template-columns: 110px 1fr 160px auto; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .cls time { font-weight: 800; font-size: 20px; font-variant-numeric: tabular-nums; font-stretch: 110%; }
+  .cls b { display: block; font-size: 19px; font-stretch: 110%; }
+  .cls small { color: var(--soft); font-size: 14px; }
+  .lvl { font-size: 13px; font-weight: 700; padding: 4px 10px; border: 1.5px solid var(--ink); justify-self: start; }
+  .lvl.all { background: var(--volt); border-color: var(--volt); }
+  .cls button { font: 800 14px var(--font); padding: 10px 16px; background: var(--ink); color: #fff; border: 0; cursor: pointer; }
+  .cls button:hover { background: var(--cobalt); }
+
+  .programs { background: var(--ink); color: var(--chalk); }
+  .programs .lead { color: #a7a7a0; }
+  .prog { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: #2a2a2a; border: 2px solid #2a2a2a; }
+  .prog article { background: var(--ink); padding: 28px 24px 32px; }
+  .prog h3 { font-size: 30px; margin: 0 0 12px; }
+  .prog h3 span { color: var(--volt); }
+  .prog p { color: #b9b9b2; margin: 0; font-size: 15px; }
+  .photo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px; }
+  .photo-row img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(1); }
+
+  .prices { display: grid; grid-template-columns: repeat(4, 1fr); border: 2px solid var(--ink); }
+  .price { padding: 28px 24px; border-right: 2px solid var(--ink); background: var(--white); display: flex; flex-direction: column; }
+  .price:last-child { border-right: 0; }
+  .price.free { background: var(--cobalt); color: #fff; }
+  .price h3 { font-size: 22px; font-stretch: 110%; }
+  .price .amt { font-size: 52px; font-weight: 900; font-stretch: 125%; margin: 14px 0 4px; letter-spacing: -.03em; }
+  .price .amt small { font-size: 16px; font-stretch: 100%; letter-spacing: 0; }
+  .price p { margin: 0 0 20px; font-size: 15px; color: var(--soft); }
+  .price.free p { color: #d4dcff; }
+  .price .btn { margin-top: auto; }
+
+  .trial { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .trial ul { padding: 0; margin: 24px 0 0; list-style: none; }
+  .trial li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .trial li b { display: block; }
+  .trial li span { color: var(--soft); font-size: 15px; }
+  form { background: var(--white); border: 2px solid var(--ink); padding: 28px; display: grid; gap: 16px; align-self: start; }
+  label { font-weight: 700; font-size: 14px; display: grid; gap: 6px; }
+  input, select { font: 16px var(--font); padding: 12px 14px; border: 2px solid var(--line); background: #fff; color: var(--ink); width: 100%; border-radius: 0; }
+  input:focus, select:focus { outline: none; border-color: var(--cobalt); }
+  .done { display: none; background: var(--volt); padding: 14px 16px; font-weight: 600; font-size: 15px; }
+  .done.show { display: block; }
+
+  footer.end { background: var(--ink); color: #a7a7a0; padding: 40px 0; font-size: 14px; }
+  footer.end .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 32px; }
+  footer.end b { color: var(--chalk); }
+
+  @media (max-width: 900px) {
+    header.top nav { display: none; }
+    header.top .btn { margin-left: auto; }
+    .hero { grid-template-columns: 1fr; }
+    .hero .copy { padding: 48px 20px 40px; }
+    .hero figure { height: 300px; order: -1; }
+    .prog, .prices { grid-template-columns: 1fr 1fr; }
+    .price:nth-child(2) { border-right: 0; }
+    .price:nth-child(-n+2) { border-bottom: 2px solid var(--ink); }
+    .trial { grid-template-columns: 1fr; gap: 32px; }
+    .cls { grid-template-columns: 80px 1fr auto; }
+    .cls .lvl { display: none; }
+  }
+  @media (max-width: 520px) {
+    section { padding: 64px 0; }
+    .hero figure { height: 240px; }
+    .hero .ctas .btn { flex: 1 1 100%; }
+    .prog, .prices { grid-template-columns: 1fr; }
+    .price { border-right: 0; border-bottom: 2px solid var(--ink); }
+    .price:last-child { border-bottom: 0; }
+    .photo-row img { height: 180px; }
+    .cls { grid-template-columns: 64px 1fr; gap: 6px 14px; }
+    .cls time { font-size: 17px; }
+    .cls button { grid-column: 2; justify-self: start; padding: 8px 14px; }
+    form { padding: 20px; }
+  }
+  .framed { scrollbar-width: none; }
+  .framed::-webkit-scrollbar { display: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+<script>if (window.self !== window.top) document.documentElement.classList.add('framed');</script>
+</head>
+<body>
+
+<div class="sample">Sample site by Jaylen. Fogline is a made-up gym. <a href="../../#contact" target="_top">Get a site like this</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">FOGLINE<span>.</span></a>
+    <nav aria-label="Main"><a href="#schedule">Schedule</a><a href="#programs">Classes</a><a href="#pricing">Pricing</a></nav>
+    <a class="btn blue" href="#trial">Free first class</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="copy">
+      <h1>Learn to fight. <span>Start Thursday.</span></h1>
+      <p>Boxing and Muay Thai in the Mission for total beginners and people who've done it for years. Your first class is free, gloves included.</p>
+      <div class="ctas">
+        <a class="btn go" href="#trial">Book a free class</a>
+        <a class="btn ghost" href="#schedule">See the schedule</a>
+      </div>
+    </div>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1517438322307-e67111335449?w=1400&q=70&auto=format&fit=crop" alt="Two people sparring inside a boxing gym" fetchpriority="high">
+      <figcaption>Loaner gloves and wraps at the desk</figcaption>
+    </figure>
+  </div>
+
+  <section id="schedule">
+    <div class="wrap">
+      <h2>This week</h2>
+      <p class="lead">Every class starts with a 10-minute warm-up and ends with bag work. Beginner classes never spar.</p>
+      <div class="tabs" role="tablist" aria-label="Day" id="tabs"></div>
+      <div class="classes" id="classes" role="tabpanel"></div>
+    </div>
+  </section>
+
+  <section class="programs" id="programs">
+    <div class="wrap">
+      <h2>Four ways in</h2>
+      <p class="lead">Pick one or mix them. Unlimited members can take anything on the schedule.</p>
+      <div class="prog">
+        <article><h3>Boxing <span>basics</span></h3><p>Stance, jab, cross, hooks and footwork. The class most people start with.</p></article>
+        <article><h3>Muay <span>Thai</span></h3><p>Kicks, knees, elbows and the clinch, taught pad round by pad round.</p></article>
+        <article><h3>Fight <span>fit</span></h3><p>45 minutes of bags, rope and conditioning. No partner, no contact.</p></article>
+        <article><h3>Kids <span>7-13</span></h3><p>Coordination, confidence and respect. No head contact, ever.</p></article>
+      </div>
+      <div class="photo-row">
+        <img src="https://images.unsplash.com/photo-1716306886418-f84f6d4c2f3a?w=900&q=70&auto=format&fit=crop" alt="A row of heavy bags hanging in the gym" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=900&q=70&auto=format&fit=crop" alt="A pair of black boxing gloves" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Simple pricing</h2>
+      <p class="lead">No sign-up fee, no contract. Cancel by text before your next billing day.</p>
+      <div class="prices">
+        <div class="price free"><h3>First class</h3><div class="amt">Free</div><p>Any beginner class, gloves and wraps included.</p><a class="btn go" href="#trial">Book it</a></div>
+        <div class="price"><h3>Drop-in</h3><div class="amt">$25</div><p>One class, any time. Good for visitors.</p><a class="btn ghost" href="#trial">Ask a question</a></div>
+        <div class="price"><h3>Unlimited</h3><div class="amt">$159<small>/mo</small></div><p>Every class on the schedule, plus open mat.</p><a class="btn blue" href="#trial">Start free</a></div>
+        <div class="price"><h3>Kids</h3><div class="amt">$119<small>/mo</small></div><p>Two classes a week. Siblings $99.</p><a class="btn ghost" href="#trial">Book a kids trial</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trial" style="padding-top:0">
+    <div class="wrap trial">
+      <div>
+        <h2>Your free class</h2>
+        <p class="lead" style="margin-bottom:0">Tell us when you're coming and we'll have gloves ready.</p>
+        <ul>
+          <li><b>Bring</b><span>Water, gym clothes and shoes you can take off. We train barefoot.</span></li>
+          <li><b>Arrive</b><span>10 minutes early so a coach can wrap your hands and show you around.</span></li>
+          <li><b>Find us</b><span>2240 Mission St, San Francisco. Two blocks from 16th St BART.</span></li>
+        </ul>
+      </div>
+      <form id="trialForm">
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Mobile number<input name="phone" type="tel" required autocomplete="tel" placeholder="(415) 555-0100"></label>
+        <label>Which class?<select name="cls" id="clsSelect"></select></label>
+        <button class="btn blue" type="submit">Book my free class</button>
+        <p class="done" id="done" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="end"><div class="wrap"><span><b>Fogline Boxing &amp; Muay Thai</b>, 2240 Mission St, San Francisco. (415) 555-0187</span><span>Sample site designed and built by <a href="../../" target="_top">Jaylen</a></span></div></footer>
+
+<script>
+  // Schedule data: [time, class, level, coach]. One source for the tabs and the form's class list.
+  const WEEK = {
+    Mon: [["6:30 am", "Fight fit", "All levels", "Coach Lena"], ["12:00 pm", "Boxing basics", "Beginner", "Coach Ray"], ["6:00 pm", "Muay Thai", "All levels", "Kru Nok"], ["7:15 pm", "Boxing sparring", "Advanced", "Coach Ray"]],
+    Tue: [["7:00 am", "Boxing basics", "Beginner", "Coach Ray"], ["4:30 pm", "Kids 7-13", "Kids", "Coach Lena"], ["6:00 pm", "Boxing basics", "Beginner", "Coach Ray"], ["7:15 pm", "Muay Thai clinch", "Intermediate", "Kru Nok"]],
+    Wed: [["6:30 am", "Fight fit", "All levels", "Coach Lena"], ["12:00 pm", "Muay Thai", "All levels", "Kru Nok"], ["6:00 pm", "Boxing basics", "Beginner", "Coach Ray"], ["7:15 pm", "Fight fit", "All levels", "Coach Lena"]],
+    Thu: [["7:00 am", "Muay Thai", "All levels", "Kru Nok"], ["4:30 pm", "Kids 7-13", "Kids", "Coach Lena"], ["6:00 pm", "Boxing basics", "Beginner", "Coach Ray"], ["7:15 pm", "Muay Thai sparring", "Advanced", "Kru Nok"]],
+    Fri: [["6:30 am", "Fight fit", "All levels", "Coach Lena"], ["12:00 pm", "Boxing basics", "Beginner", "Coach Ray"], ["6:00 pm", "Muay Thai", "All levels", "Kru Nok"]],
+    Sat: [["9:00 am", "Kids 7-13", "Kids", "Coach Lena"], ["10:30 am", "Boxing basics", "Beginner", "Coach Ray"], ["12:00 pm", "Open mat", "All levels", "Rotating"]],
+    Sun: [["10:00 am", "Fight fit", "All levels", "Coach Lena"]],
+  };
+  const tabs = document.getElementById("tabs"), list = document.getElementById("classes"), select = document.getElementById("clsSelect");
+  const days = Object.keys(WEEK);
+  const todayKey = days[(new Date().getDay() + 6) % 7];
+
+  function show(day) {
+    tabs.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b.dataset.day === day));
+    list.innerHTML = WEEK[day].map(([t, n, l, c]) => `
+      <div class="cls"><time>${t}</time><div><b>${n}</b><small>${c}</small></div>
+      <span class="lvl ${l === "All levels" || l === "Beginner" ? "all" : ""}">${l}</span>
+      <button type="button" data-pick="${day} ${t}: ${n}">${l === "Beginner" || l === "All levels" || l === "Kids" ? "Try it free" : "Book"}</button></div>`).join("");
+  }
+  tabs.innerHTML = days.map((d) => `<button type="button" role="tab" data-day="${d}">${d === todayKey ? "Today" : d}</button>`).join("");
+  tabs.onclick = (e) => { const b = e.target.closest("button"); if (b) show(b.dataset.day); };
+  show(todayKey);
+
+  select.innerHTML = days.flatMap((d) => WEEK[d].filter((c) => c[2] !== "Advanced").map(([t, n]) => `<option>${d} ${t}: ${n}</option>`)).join("");
+  list.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-pick]"); if (!b) return;
+    if ([...select.options].some((o) => o.value === b.dataset.pick)) select.value = b.dataset.pick;
+    document.getElementById("trial").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
+
+  document.getElementById("trialForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const f = new FormData(e.target), done = document.getElementById("done");
+    done.textContent = `See you ${f.get("cls").split(":")[0]}, ${f.get("name").split(" ")[0]}. A real gym site would text you a reminder; this sample sends nothing.`;
+    done.classList.add("show");
+  });
+</script>
+</body>
+</html>

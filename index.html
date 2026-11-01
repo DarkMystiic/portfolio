@@ -3,16 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jaylen · Websites that sell</title>
-<meta name="description" content="I build fast, good-looking websites for small businesses. Introductory one-page website package: $150.">
+<title>Jaylen · Websites for Bay Area businesses</title>
+<meta name="description" content="I build websites for Bay Area barbers, gyms, cleaners and trades. One page, live on every phone in 7 days, for $150.">
+<meta name="theme-color" content="#f6f2ea">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Websites for Bay Area businesses, $150">
+<meta property="og:description" content="Barbers, gyms, cleaners and trades: a one-page website, live on every phone in 7 days.">
+<meta property="og:url" content="https://darkmystiic.github.io/portfolio/">
+<meta property="og:image" content="https://darkmystiic.github.io/portfolio/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317140f'/%3E%3Ccircle cx='22' cy='22' r='4' fill='%23e4572e'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #f6f2ea; --card: #fffdf8; --ink: #17140f; --muted: #6b645a; --line: #e2dbcf;
-    --accent: #e4572e; --accent-ink: #fff; --dark: #0b0c0f;
+    --accent: #e4572e; --accent-deep: #c8441f; --dark: #0b0c0f;
     --display: "Fraunces", Georgia, serif; --body: "Inter", system-ui, sans-serif;
   }
   * { box-sizing: border-box; }
@@ -20,273 +29,385 @@
   body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
   a { color: inherit; }
   img { max-width: 100%; display: block; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; margin: 0; }
-  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border-radius: 999px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--ink); transition: transform .15s, background .15s; cursor: pointer; font-size: 16px; font-family: var(--body); }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.04; letter-spacing: -.02em; margin: 0; font-optical-sizing: auto; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 24px; border-radius: 999px; font: 600 16px var(--body); text-decoration: none; border: 1.5px solid var(--ink); cursor: pointer; transition: transform .15s, background .15s; }
   .btn:hover { transform: translateY(-2px); }
-  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
   .btn.ghost { background: transparent; color: var(--ink); }
+  [data-phone] { display: none !important; }
+  .has-phone [data-phone] { display: inline-flex !important; }
+  .has-phone [data-nophone] { display: none !important; }
 
   /* nav */
-  nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .logo { font-family: var(--display); font-weight: 700; font-size: 22px; text-decoration: none; }
+  nav.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav.top .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
+  .logo { font-family: var(--display); font-weight: 700; font-size: 23px; text-decoration: none; }
   .logo span { color: var(--accent); }
-  nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; font-size: 15px; font-weight: 500; }
-  nav ul a { text-decoration: none; color: var(--muted); }
-  nav ul a:hover { color: var(--ink); }
-  nav .btn { padding: 9px 16px; font-size: 14px; }
+  nav.top ul { display: flex; gap: 26px; list-style: none; margin: 0 0 0 auto; padding: 0; font-size: 15px; font-weight: 500; }
+  nav.top ul a { text-decoration: none; color: var(--muted); }
+  nav.top ul a:hover { color: var(--ink); }
+  nav.top .btn { min-height: 40px; padding: 0 18px; font-size: 14px; }
 
-  /* hero */
-  .hero { padding: 96px 0 72px; }
-  .hero h1 { font-size: clamp(44px, 7vw, 88px); max-width: 14ch; }
-  .hero h1 em { font-style: italic; color: var(--accent); }
-  .hero p.lede { font-size: 20px; color: var(--muted); max-width: 40ch; margin: 24px 0 32px; }
+  /* hero: copy + live phone */
+  .hero { padding: 64px 0 88px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; }
+  .hero h1 { font-size: clamp(46px, 6.6vw, 84px); font-weight: 600; letter-spacing: -.035em; line-height: .98; }
+  .hero .lede { font-size: 20px; color: var(--muted); max-width: 36ch; margin: 26px 0 32px; }
   .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 72px; border-top: 1px solid var(--line); }
-  .stats div { padding: 20px 20px 0 0; }
-  .stats b { display: block; font-family: var(--display); font-size: 34px; }
-  .stats span { font-size: 14px; color: var(--muted); }
+  .hero .local { margin: 26px 0 0; font-size: 15px; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+  .hero .local::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2f9e5b; box-shadow: 0 0 0 4px #2f9e5b22; }
 
-  section { padding: 88px 0; }
-  .section-head h2 { font-size: clamp(34px, 4.5vw, 52px); max-width: 20ch; }
-  .section-head p { color: var(--muted); max-width: 56ch; margin: 16px 0 0; font-size: 18px; }
+  .stage { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  .phone { --k: .853; position: relative; width: calc(375px * var(--k) + 24px); padding: 12px; border-radius: 52px; background: #1b1a18; box-shadow: 0 1px 0 2px #2c2a27 inset, 0 40px 80px -30px rgba(23, 20, 15, .45), 0 18px 36px -18px rgba(23, 20, 15, .3); }
+  .phone::before { content: ""; position: absolute; top: 22px; left: 50%; width: 92px; height: 26px; margin-left: -46px; border-radius: 20px; background: #1b1a18; z-index: 2; }
+  .screen { position: relative; width: calc(375px * var(--k)); height: calc(780px * var(--k)); border-radius: 40px; overflow: hidden; background: #fff; }
+  .screen .status { position: absolute; inset: 0 0 auto; height: 36px; background: #000; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 2px 26px 0; font: 600 12px var(--body); z-index: 1; }
+  .screen .status i { width: 22px; height: 10px; border: 1.5px solid #fff; border-radius: 3px; position: relative; }
+  .screen .status i::after { content: ""; position: absolute; inset: 1.5px 5px 1.5px 1.5px; background: #fff; border-radius: 1px; }
+  .screen iframe { position: absolute; top: 36px; left: 0; width: 375px; height: calc((780px * var(--k) - 36px) / var(--k)); border: 0; transform: scale(var(--k)); transform-origin: 0 0; transition: opacity .25s; }
+  .screen iframe.loading { opacity: 0; }
+  .switch { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px; }
+  .switch button { font: 600 14px var(--body); border: 0; background: none; color: var(--muted); padding: 9px 16px; border-radius: 999px; cursor: pointer; }
+  .switch button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+  .stage .hint { font-size: 14px; color: var(--muted); margin: -6px 0 0; text-align: center; }
 
-  /* featured case study */
-  .feature { background: var(--dark); color: #f3f1ec; border-radius: 28px; overflow: hidden; margin-top: 44px; }
-  .feature .shot { display: block; position: relative; border-bottom: 1px solid #23252b; }
-  .feature .shot img { width: 100%; }
-  .feature .shot .badge { position: absolute; top: 18px; left: 18px; background: #2bd576; color: #06210f; font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; }
-  .feature .body { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; padding: 44px; }
+  section { padding: 96px 0; }
+  .head { max-width: 640px; }
+  .head h2 { font-size: clamp(36px, 4.8vw, 56px); }
+  .head p { color: var(--muted); font-size: 18px; margin: 18px 0 0; max-width: 52ch; }
+
+  /* the search comparison */
+  .search { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }
+  .result { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px; font-family: Arial, sans-serif; color: #202124; }
+  .result .q { display: flex; align-items: center; gap: 10px; border: 1px solid #dfe1e5; border-radius: 999px; padding: 10px 16px; font-size: 15px; color: #4d5156; margin-bottom: 18px; }
+  .result .q::before { content: ""; width: 12px; height: 12px; border: 2px solid #9aa0a6; border-radius: 50%; }
+  .result .name { font-size: 22px; }
+  .result .meta { font-size: 14px; color: #4d5156; margin: 4px 0 14px; }
+  .result .meta b { color: #e37400; font-weight: 400; }
+  .result .acts { display: flex; gap: 8px; flex-wrap: wrap; }
+  .result .acts span { font-size: 14px; border: 1px solid #dadce0; border-radius: 999px; padding: 7px 14px; color: #1a73e8; }
+  .result .acts span.off { color: #9aa0a6; text-decoration: line-through; }
+  .result .acts span.on { background: #e8f0fe; border-color: #e8f0fe; font-weight: 700; }
+  .result .peek { margin-top: 16px; border-radius: 12px; overflow: hidden; border: 1px solid #eee; aspect-ratio: 16 / 7; background: #f1f3f4; }
+  .result .peek img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .result .peek.none { display: grid; place-items: center; color: #9aa0a6; font-size: 14px; }
+  .verdict { margin: 16px 4px 0; font-size: 16px; }
+  .verdict b { font-family: var(--display); font-size: 21px; display: block; margin-bottom: 2px; }
+
+  /* sample sites */
+  .samples { display: grid; gap: 72px; margin-top: 56px; }
+  .sample { display: grid; grid-template-columns: 1fr 1.35fr; gap: 56px; align-items: center; }
+  .sample:nth-child(even) { grid-template-columns: 1.35fr 1fr; }
+  .sample:nth-child(even) .shot { order: -1; }
+  .sample .where { font-size: 15px; color: var(--muted); font-weight: 500; }
+  .sample h3 { font-size: clamp(30px, 3.4vw, 40px); margin: 6px 0 14px; }
+  .sample p { color: var(--muted); margin: 0 0 18px; }
+  .sample ul { list-style: none; padding: 0; margin: 0 0 26px; display: grid; gap: 10px; }
+  .sample li { padding-left: 26px; position: relative; }
+  .sample li::before { content: ""; position: absolute; left: 0; top: 10px; width: 10px; height: 10px; border-radius: 3px; background: var(--accent); }
+  .shot { display: block; border-radius: 16px; overflow: hidden; background: #fff; border: 1px solid var(--line); box-shadow: 0 30px 60px -36px rgba(23, 20, 15, .4); transition: transform .2s; }
+  .shot:hover { transform: translateY(-4px); }
+  .shot .bar { display: flex; gap: 6px; padding: 11px 14px; background: #efe9de; border-bottom: 1px solid var(--line); }
+  .shot .bar i { width: 10px; height: 10px; border-radius: 50%; background: #d6cdbf; }
+  .shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+  .note { margin-top: 48px; font-size: 15px; color: var(--muted); }
+
+  /* CombatLab */
+  .feature { background: var(--dark); color: #f3f1ec; border-radius: 28px; overflow: hidden; margin-top: 48px; display: grid; grid-template-columns: 1.1fr 1fr; }
+  .feature .shot2 { position: relative; display: block; min-height: 100%; }
+  .feature .shot2 img { width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+  .feature .badge { position: absolute; top: 18px; left: 18px; background: #2bd576; color: #06210f; font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; }
+  .feature .body { padding: 44px; }
   .feature h3 { font-size: 40px; }
-  .feature .tag { color: #9aa0ab; margin: 10px 0 20px; }
+  .feature .tag { color: #9aa0ab; margin: 8px 0 20px; }
   .feature p { color: #c9ccd3; margin: 0 0 16px; }
-  .feature ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
-  .feature li { padding-left: 28px; position: relative; color: #dfe1e6; }
-  .feature li::before { content: ""; position: absolute; left: 0; top: 9px; width: 12px; height: 12px; border-radius: 3px; background: linear-gradient(135deg, #ff5b2e, #ffb02e); }
+  .feature ul { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 12px; }
+  .feature li { padding-left: 26px; position: relative; color: #dfe1e6; font-size: 16px; }
+  .feature li::before { content: ""; position: absolute; left: 0; top: 9px; width: 11px; height: 11px; border-radius: 3px; background: linear-gradient(135deg, #ff5b2e, #ffb02e); }
   .feature li b { color: #fff; }
-  .feature .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-  .feature .btn.light { border-color: #f3f1ec; color: #f3f1ec; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
-  .chips span { font-size: 13px; border: 1px solid #33363e; color: #b7bbc4; padding: 5px 11px; border-radius: 999px; }
-
-  /* other work */
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; }
-  .card .kind { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-  .card h3 { font-size: 26px; margin: 10px 0 12px; }
-  .card p { color: var(--muted); margin: 0 0 18px; font-size: 16px; }
-  .card .facts { margin-top: auto; border-top: 1px solid var(--line); padding-top: 14px; font-size: 14px; display: grid; gap: 6px; }
-  .card .facts b { color: var(--ink); }
+  .feature .btn.ghost { border-color: #f3f1ec; color: #f3f1ec; }
+  .feature .links { display: flex; gap: 12px; flex-wrap: wrap; }
 
   /* offer */
   .offer { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .offer-box { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; margin-top: 44px; }
+  .offer-box { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; margin-top: 48px; }
   .price { border: 2px solid var(--ink); border-radius: 24px; padding: 36px; background: var(--paper); position: relative; }
   .price .ribbon { position: absolute; top: -14px; left: 28px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 999px; }
-  .price .amount { font-family: var(--display); font-size: 88px; line-height: 1; font-weight: 700; }
-  .price .amount sup { font-size: 40px; vertical-align: 32px; margin-right: 2px; }
-  .price .per { color: var(--muted); margin: 8px 0 28px; }
-  .price .btn { width: 100%; justify-content: center; }
-  .price small { display: block; color: var(--muted); font-size: 13px; margin-top: 14px; text-align: center; }
-  .includes { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
-  .includes li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .price .amount { font-family: var(--display); font-size: 96px; line-height: 1; font-weight: 600; letter-spacing: -.04em; }
+  .price .amount sup { font-size: 40px; vertical-align: 38px; margin-right: 2px; }
+  .price .per { color: var(--muted); margin: 10px 0 28px; }
+  .price .btn { width: 100%; }
+  .price small { display: block; color: var(--muted); font-size: 14px; margin-top: 14px; text-align: center; }
+  .includes { list-style: none; padding: 0; margin: 0; }
+  .includes li { display: grid; grid-template-columns: 28px 1fr; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line); }
   .includes li:last-child { border-bottom: 0; }
   .includes .tick { width: 28px; height: 28px; border-radius: 50%; background: #fbe3da; color: var(--accent); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
   .includes b { display: block; }
   .includes span { color: var(--muted); font-size: 15px; }
 
-  /* process */
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; counter-reset: s; }
-  .steps div { border-top: 2px solid var(--ink); padding-top: 20px; }
-  .steps div::before { counter-increment: s; content: "0" counter(s); font-family: var(--display); font-size: 15px; color: var(--accent); font-weight: 700; }
-  .steps h3 { font-size: 24px; margin: 8px 0 8px; }
+  /* process (a real sequence, so it's numbered) */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 48px 0 0; padding: 0; list-style: none; counter-reset: s; }
+  .steps li { border-top: 2px solid var(--ink); padding-top: 20px; counter-increment: s; }
+  .steps li::before { content: counter(s); font-family: var(--display); font-size: 44px; line-height: 1; color: var(--accent); display: block; margin-bottom: 12px; }
+  .steps h3 { font-size: 24px; margin-bottom: 8px; }
   .steps p { color: var(--muted); margin: 0; font-size: 16px; }
+
+  /* questions */
+  .faq { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; }
+  details { border-bottom: 1px solid var(--line); }
+  details:first-child { border-top: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 20px 40px 20px 0; position: relative; font-family: var(--display); font-size: 22px; font-weight: 600; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 4px; top: 16px; font: 400 28px var(--body); color: var(--accent); transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin: -4px 0 22px; color: var(--muted); max-width: 58ch; }
 
   /* contact */
   .contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; }
+  .reach { display: grid; gap: 12px; margin-top: 28px; justify-items: start; }
+  .reach .mail { font-weight: 600; }
   form { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 32px; display: grid; gap: 16px; }
   label { font-size: 14px; font-weight: 600; display: grid; gap: 6px; }
   input, select, textarea { font: 16px var(--body); padding: 13px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); width: 100%; }
   input:focus, select:focus, textarea:focus { outline: none; border-color: var(--ink); }
   textarea { min-height: 120px; resize: vertical; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .direct { margin-top: 28px; font-size: 16px; }
-  .direct a { font-weight: 600; }
   .form-note { font-size: 13px; color: var(--muted); margin: 0; }
 
   footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
-  @media (max-width: 900px) {
-    nav ul { display: none; }
-    .feature .body, .offer-box, .contact { grid-template-columns: 1fr; gap: 32px; }
+  /* one entrance: the phone rises in on load */
+  @keyframes rise { from { opacity: 0; transform: translateY(40px) rotate(2deg); } to { opacity: 1; transform: none; } }
+  .phone { animation: rise .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
+
+  @media (max-width: 960px) {
+    nav.top ul { display: none; }
+    nav.top .btn { margin-left: auto; }
+    .hero .wrap, .sample, .sample:nth-child(even), .offer-box, .contact, .faq, .feature { grid-template-columns: 1fr; }
+    .hero .wrap { gap: 48px; }
+    .sample { gap: 28px; }
+    .sample .shot { order: -1; }
+    .compare, .steps { grid-template-columns: 1fr; }
+    .feature .shot2 { aspect-ratio: 16 / 10; }
     .feature .body { padding: 28px 22px; }
-    .grid, .steps { grid-template-columns: 1fr; }
-    .stats { grid-template-columns: repeat(2, 1fr); }
-    .section-head { max-width: none; }
   }
   @media (max-width: 600px) {
     .wrap { padding: 0 16px; }
-    nav .wrap { height: 58px; }
-    nav .btn { padding: 8px 14px; font-size: 13px; }
-    .hero { padding: 40px 0 40px; }
+    nav.top .wrap { height: 58px; }
+    .hero { padding: 36px 0 64px; }
     .hero h1 { font-size: 46px; }
-    .hero p.lede { font-size: 18px; margin: 18px 0 26px; }
-    .hero .ctas, .feature .links { flex-direction: column; }
-    .hero .btn, .feature .btn { justify-content: center; width: 100%; }
-    .stats { margin-top: 44px; gap: 0 16px; }
-    .stats div { padding: 16px 0 0; }
-    .stats b { font-size: 28px; }
-    .stats span { font-size: 13px; line-height: 1.4; display: block; }
+    .hero .lede { font-size: 18px; margin: 18px 0 26px; }
+    .hero .ctas .btn { flex: 1 1 100%; }
+    .phone { --k: .72; border-radius: 44px; padding: 10px; width: calc(375px * var(--k) + 20px); }
+    .phone::before { top: 18px; width: 76px; height: 22px; margin-left: -38px; }
+    .screen { border-radius: 34px; }
     section { padding: 64px 0; }
-    .section-head h2 { font-size: 32px; }
-    .section-head p { font-size: 16px; }
-    .feature, .grid, .offer-box, .steps { margin-top: 28px; }
-    .feature { border-radius: 20px; margin-left: -4px; margin-right: -4px; }
-    .feature .shot .badge { top: auto; bottom: 14px; left: 14px; z-index: 1; }
-    .feature .shot::after { content: ""; position: absolute; inset: auto 0 0; height: 90px; background: linear-gradient(transparent, var(--dark)); }
-    .feature .body { padding: 24px 20px 28px; gap: 28px; }
-    .feature h3 { font-size: 30px; }
-    .feature p, .feature li { font-size: 16px; }
-    .card { padding: 22px 20px; }
-    .card h3 { font-size: 23px; }
-    .row { grid-template-columns: 1fr; }
+    .head p { font-size: 16px; }
+    .samples { gap: 56px; margin-top: 36px; }
+    .sample .btn { width: 100%; }
+    .feature { border-radius: 20px; }
+    .feature h3 { font-size: 32px; }
+    .feature .links .btn { flex: 1 1 100%; }
     .price { padding: 32px 20px 24px; }
-    .price .amount { font-size: 72px; }
-    .includes li { padding: 12px 0; }
-    .steps { gap: 28px; }
+    .price .amount { font-size: 76px; }
+    .row { grid-template-columns: 1fr; }
     form { padding: 22px 18px; }
+    summary { font-size: 19px; }
     footer .wrap { flex-direction: column; gap: 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .phone { animation: none; }
+    .btn, .shot, .screen iframe { transition: none; }
+    .btn:hover, .shot:hover { transform: none; }
   }
 </style>
 </head>
 <body>
 
-<nav>
+<nav class="top" aria-label="Main">
   <div class="wrap">
     <a class="logo" href="#top">Jaylen<span>.</span></a>
     <ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#offer">$150 package</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#samples">Sample sites</a></li>
+      <li><a href="#offer">Price</a></li>
+      <li><a href="#questions">Questions</a></li>
     </ul>
-    <a class="btn primary" href="#contact">Start a project</a>
+    <a class="btn primary" data-phone href="sms:">Text me</a>
+    <a class="btn primary" data-nophone href="#contact">Get in touch</a>
   </div>
 </nav>
 
-<header class="hero" id="top">
+<main id="top">
+<header class="hero">
   <div class="wrap">
-    <p class="eyebrow">Web developer</p>
-    <h1>Websites that make people <em>want in.</em></h1>
-    <p class="lede">I design and build fast, polished websites for small businesses, gyms, creators and new products. Your site, live and working on every phone, for $150.</p>
-    <div class="ctas">
-      <a class="btn primary" href="#offer">See the $150 package →</a>
-      <a class="btn ghost" href="#work">View my work</a>
+    <div>
+      <h1>Your customers are already searching for you.</h1>
+      <p class="lede">I build websites for Bay Area barbers, gyms, cleaners and trades, so the people searching find your prices, your photos and a button to book. One page, live in 7 days, $150.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#samples">See the sample sites</a>
+        <a class="btn ghost" data-phone href="sms:">Text me a question</a>
+        <a class="btn ghost" data-nophone href="#contact">Ask me a question</a>
+      </div>
+      <p class="local">Based in the Bay Area. You deal with me, not an agency.</p>
     </div>
-    <div class="stats">
-      <div><b>800+</b><span>voice clips in CombatLab</span></div>
-      <div><b>14</b><span>screens in my phone app</span></div>
-      <div><b>3</b><span>Roblox games shipped &amp; in progress</span></div>
-      <div><b>7 days</b><span>typical one-page delivery</span></div>
+    <div class="stage">
+      <div class="phone">
+        <div class="screen"><div class="status" aria-hidden="true"><span>9:41</span><i></i></div><iframe id="live" src="samples/barber/" title="Live sample website on a phone" loading="eager"></iframe></div>
+      </div>
+      <div class="switch" role="group" aria-label="Choose a sample site">
+        <button type="button" aria-pressed="true" data-src="samples/barber/">Barber</button>
+        <button type="button" aria-pressed="false" data-src="samples/gym/">Gym</button>
+        <button type="button" aria-pressed="false" data-src="samples/cleaning/">Cleaning</button>
+      </div>
+      <p class="hint">That's a real website. Scroll it, tap the buttons.</p>
     </div>
   </div>
 </header>
 
-<section id="work" style="padding-top:24px">
+<section class="search" id="why">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Featured project</p>
-      <h2>CombatLab: a launch site that lets visitors try the product.</h2>
-      <p>A combo coach for Boxing and Muay Thai. I built the phone app and its website from scratch, and the site doesn't just describe the app. You press play and hear a real round.</p>
+    <div class="head">
+      <h2>Search your business name. What comes up?</h2>
+      <p>Most local businesses show up on Google Maps with reviews and a phone number, and nothing else. Customers who want to see prices or book before calling move on to the next result.</p>
     </div>
-
-    <article class="feature">
-      <a class="shot" href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">
-        <span class="badge">● Live</span>
-        <picture>
-          <source media="(max-width: 600px)" srcset="assets/combatlab-phone.jpg" width="375" height="740">
-          <img src="assets/combatlab-hero.jpg" alt="CombatLab landing page: a big headline next to a live round clock that calls the combo 1-2-3" width="1280" height="800">
-        </picture>
-      </a>
-      <div class="body">
-        <div>
-          <h3>CombatLab</h3>
-          <p class="tag">Website + iOS/Android app · Boxing &amp; Muay Thai training</p>
-          <p>The goal: get fighters to <em>feel</em> the app before it's in the stores. So the hero isn't a picture, it's a working 15-second sample round with the app's real coach voice, bells and colour-coded phases.</p>
-          <p>The page also explains pricing clearly for solo fighters and gyms, works perfectly on phones, and links to proper privacy and terms pages.</p>
-          <div class="links">
-            <a class="btn primary" href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">Visit the live site ↗</a>
-            <a class="btn ghost light" href="#contact">Want one like it?</a>
-          </div>
+    <div class="compare">
+      <div>
+        <div class="result" aria-label="Example search result without a website">
+          <div class="q">barber near me</div>
+          <div class="name">Your Business</div>
+          <div class="meta"><b>4.8 ★★★★★</b> (96) · Barber shop · Open</div>
+          <div class="acts"><span>Call</span><span>Directions</span><span class="off">Website</span></div>
+          <div class="peek none">No website listed</div>
         </div>
-        <div>
-          <ul>
-            <li><b>Interactive hero.</b> A live round clock that counts get-set, fight, last 10 seconds and rest, and calls combos out loud.</li>
-            <li><b>Combo reader.</b> Type gym-whiteboard shorthand like <code>1-2-3b-kick</code> and it translates it instantly.</li>
-            <li><b>Pricing built to convert.</b> Free, Pro and Gym plans; stacked cards on phones so nobody has to swipe sideways.</li>
-            <li><b>The app behind it.</b> 14 screens in React Native, 800+ pre-recorded voice clips, a combo builder, Class Mode for gyms and automated tests.</li>
-            <li><b>Hosted for free.</b> Deployed on GitHub Pages: no monthly hosting bill.</li>
-          </ul>
-          <div class="chips">
-            <span>HTML / CSS / JS</span><span>Responsive</span><span>Web Audio</span><span>React Native</span><span>TypeScript</span><span>GitHub Pages</span>
-          </div>
+        <p class="verdict"><b>Without a site</b>No prices, no photos of your work, no way to book. They call someone else.</p>
+      </div>
+      <div>
+        <div class="result" aria-label="Example search result with a website">
+          <div class="q">barber near me</div>
+          <div class="name">Your Business</div>
+          <div class="meta"><b>4.8 ★★★★★</b> (96) · Barber shop · Open</div>
+          <div class="acts"><span>Call</span><span>Directions</span><span class="on">Website</span></div>
+          <div class="peek"><img src="assets/sample-barber.jpg" alt="The sample barbershop website" loading="lazy"></div>
         </div>
-      </div>
-    </article>
-
-    <div class="section-head" style="margin-top:88px">
-      <p class="eyebrow">More I've built</p>
-      <h2>Games with real players, real stores, real saves.</h2>
-      <p>Before websites, I shipped games on Roblox. Same skills: clean design, things that work on every device, and checkout flows that don't break.</p>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <span class="kind">Roblox game · Live</span>
-        <h3>+1 Fight A Brainrot</h3>
-        <p>An incremental fighting game: 100 stages, pets, eggs, swords, a world boss and rebirths, with a full in-game store.</p>
-        <div class="facts"><span><b>Shipped:</b> several live updates</span><span><b>Built:</b> store, passes, donations, saves</span></div>
-      </div>
-      <div class="card">
-        <span class="kind">Roblox game · Live</span>
-        <h3>Mining Incremental</h3>
-        <p>A mining idle game with upgrades, temples, a pickaxe forge and seasonal events. Built with a code-first, version-controlled workflow.</p>
-        <div class="facts"><span><b>History:</b> 490+ tracked commits</span><span><b>Built:</b> economy, HUD, world, events</span></div>
-      </div>
-      <div class="card">
-        <span class="kind">Roblox games · In development</span>
-        <h3>Button Simulator &amp; more</h3>
-        <p>New titles built on my own reusable toolkit: map builders, automatic layout checks and a shared asset library.</p>
-        <div class="facts"><span><b>Focus:</b> clean, light visual style</span><span><b>Built:</b> reusable dev toolkit</span></div>
+        <p class="verdict"><b>With a site</b>Prices, photos, hours and a Book button, one tap from the search.</p>
       </div>
     </div>
   </div>
 </section>
 
+<section id="samples">
+  <div class="wrap">
+    <div class="head">
+      <h2>Three sample sites, three different businesses.</h2>
+      <p>Each one is built around the one thing that business needs most from its website. Open them on your phone; that's where your customers will see yours.</p>
+    </div>
+    <div class="samples">
+      <article class="sample">
+        <div>
+          <span class="where">Barbershop in Oakland</span>
+          <h3>Third Chair Barbers</h3>
+          <p>Built to fill chairs. Everything a walk-in wants to know fits on one phone screen.</p>
+          <ul>
+            <li>An open or closed sign that updates itself from the shop's hours</li>
+            <li>Book a cut with a favourite barber in three taps</li>
+            <li>Every price on one screen, so nobody has to call and ask</li>
+          </ul>
+          <a class="btn ghost" href="samples/barber/" target="_blank" rel="noopener">Open the barber site</a>
+        </div>
+        <a class="shot" href="samples/barber/" target="_blank" rel="noopener" aria-label="Open the barbershop sample site"><div class="bar"><i></i><i></i><i></i></div><img src="assets/sample-barber.jpg" alt="Third Chair Barbers homepage: a dark hero photo of a barber chair with a Book a chair button" width="1280" height="800" loading="lazy"></a>
+      </article>
+      <article class="sample">
+        <div>
+          <span class="where">Boxing and Muay Thai gym in San Francisco</span>
+          <h3>Fogline</h3>
+          <p>Built to turn curious visitors into a first free class.</p>
+          <ul>
+            <li>A weekly schedule you can tap through by day, opening on today</li>
+            <li>Any class books straight into the free-trial form</li>
+            <li>Pricing with no small print: no contract, cancel by text</li>
+          </ul>
+          <a class="btn ghost" href="samples/gym/" target="_blank" rel="noopener">Open the gym site</a>
+        </div>
+        <a class="shot" href="samples/gym/" target="_blank" rel="noopener" aria-label="Open the gym sample site"><div class="bar"><i></i><i></i><i></i></div><img src="assets/sample-gym.jpg" alt="Fogline gym homepage: a bold headline, Learn to fight, next to a blue-tinted sparring photo" width="1280" height="800" loading="lazy"></a>
+      </article>
+      <article class="sample">
+        <div>
+          <span class="where">House cleaning on the Peninsula</span>
+          <h3>Brightwell Home Cleaning</h3>
+          <p>Built to get quote requests without a single phone call.</p>
+          <ul>
+            <li>An instant price as you pick bedrooms, bathrooms and how often</li>
+            <li>A ZIP code check for the service area</li>
+            <li>The full room-by-room checklist, so customers know what they're paying for</li>
+          </ul>
+          <a class="btn ghost" href="samples/cleaning/" target="_blank" rel="noopener">Open the cleaning site</a>
+        </div>
+        <a class="shot" href="samples/cleaning/" target="_blank" rel="noopener" aria-label="Open the cleaning sample site"><div class="bar"><i></i><i></i><i></i></div><img src="assets/sample-cleaning.jpg" alt="Brightwell homepage: Come home to a clean house, with a photo of a bright living room" width="1280" height="800" loading="lazy"></a>
+      </article>
+    </div>
+    <p class="note">These three businesses are made up so you can see the range. Yours would use your name, your prices and your photos.</p>
+  </div>
+</section>
+
+<section id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2>And one I shipped for real.</h2>
+      <p>CombatLab is my own Boxing and Muay Thai app. Its website lets visitors hear a real training round before the app is even out.</p>
+    </div>
+    <article class="feature">
+      <a class="shot2" href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">
+        <span class="badge">● Live</span>
+        <picture>
+          <source media="(max-width: 600px)" srcset="assets/combatlab-phone.jpg">
+          <img src="assets/combatlab-hero.jpg" alt="CombatLab landing page: a big headline next to a live round clock that calls the combo 1-2-3" width="1280" height="800" loading="lazy">
+        </picture>
+      </a>
+      <div class="body">
+        <h3>CombatLab</h3>
+        <p class="tag">Website and iPhone/Android app</p>
+        <ul>
+          <li><b>A hero you can press play on.</b> A live round clock with the app's real coach voice and bells.</li>
+          <li><b>Pricing that reads on a phone.</b> The plan table turns into stacked cards, so nobody swipes sideways.</li>
+          <li><b>The app behind it.</b> 14 screens, 800+ recorded voice clips and automated tests.</li>
+          <li><b>No hosting bill.</b> Live on free hosting since launch.</li>
+        </ul>
+        <div class="links">
+          <a class="btn primary" href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">Visit the live site</a>
+          <a class="btn ghost" href="#contact">Want one like it?</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
 <section class="offer" id="offer">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Introductory offer</p>
+    <div class="head">
       <h2>Your website, done properly, for $150.</h2>
-      <p>I'm taking on my first client projects, so you get a site built with the same care as CombatLab at an introductory price.</p>
+      <p>I'm taking on my first Bay Area clients, so you get the same care as the samples above at an introductory price.</p>
     </div>
     <div class="offer-box">
       <div class="price">
         <span class="ribbon">Introductory price</span>
         <div class="amount"><sup>$</sup>150</div>
-        <p class="per">One-time payment. No monthly fees from me.</p>
-        <a class="btn primary" href="#contact">Claim the $150 package →</a>
-        <small>Need more pages or a store? Ask. I'll quote it up front.</small>
+        <p class="per">One time. No monthly fee from me.</p>
+        <a class="btn primary" href="#contact">Start my website</a>
+        <small>Need more pages or online booking? Ask, and I'll quote it up front.</small>
       </div>
       <ul class="includes">
-        <li><span class="tick">✓</span><div><b>A custom one-page website</b><span>Up to 5 sections (e.g. hero, services, about, reviews, contact), designed for your brand, not a template.</span></div></li>
-        <li><span class="tick">✓</span><div><b>Looks great on every phone</b><span>Tested on phone, tablet and desktop sizes.</span></div></li>
-        <li><span class="tick">✓</span><div><b>A way for customers to reach you</b><span>Contact form or email/call/booking buttons.</span></div></li>
-        <li><span class="tick">✓</span><div><b>Free hosting, set up for you</b><span>Live on the web with no hosting bill. I'll connect your own domain if you have one (domain cost is yours).</span></div></li>
-        <li><span class="tick">✓</span><div><b>Found on Google</b><span>Page titles, descriptions and share previews set up properly.</span></div></li>
-        <li><span class="tick">✓</span><div><b>2 rounds of changes</b><span>We adjust it together until you're happy.</span></div></li>
+        <li><span class="tick" aria-hidden="true">✓</span><div><b>A one-page site designed for your business</b><span>Up to 5 sections, like prices, about, photos, reviews and contact. Not a template.</span></div></li>
+        <li><span class="tick" aria-hidden="true">✓</span><div><b>Made for phones first</b><span>Checked on phone, tablet and desktop sizes before you see it.</span></div></li>
+        <li><span class="tick" aria-hidden="true">✓</span><div><b>Call, text, book or email buttons</b><span>Whatever your customers already use to reach you.</span></div></li>
+        <li><span class="tick" aria-hidden="true">✓</span><div><b>Hosting set up, with no hosting bill</b><span>I'll connect your own domain if you have one (about $12 a year, paid by you).</span></div></li>
+        <li><span class="tick" aria-hidden="true">✓</span><div><b>Ready for Google and link previews</b><span>Page titles, descriptions and the preview card that shows when you text the link.</span></div></li>
+        <li><span class="tick" aria-hidden="true">✓</span><div><b>Two rounds of changes</b><span>We adjust it together until you're happy with it.</span></div></li>
       </ul>
     </div>
   </div>
@@ -294,61 +415,101 @@
 
 <section id="process">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">How it works</p>
-      <h2>Simple, fast, no jargon.</h2>
-    </div>
-    <div class="steps">
-      <div><h3>Tell me about you</h3><p>Send the form below: your business, what you want the site to do, and any examples you like.</p></div>
-      <div><h3>I design &amp; build</h3><p>You get a first version to look at, usually within a few days. Then two rounds of changes.</p></div>
-      <div><h3>You go live</h3><p>I put it online, connect your domain, and hand you everything. You own it.</p></div>
+    <div class="head"><h2>How it works</h2></div>
+    <ol class="steps">
+      <li><h3>We talk for 15 minutes</h3><p>By text, phone or email. What you do, what you charge, and what customers ask you most.</p></li>
+      <li><h3>I design and build it</h3><p>You get a link to a first version within a few days, then two rounds of changes.</p></li>
+      <li><h3>You go live</h3><p>I put it online, connect your domain and hand everything over. It's yours.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="questions" style="padding-top:0">
+  <div class="wrap faq">
+    <div class="head"><h2>Questions owners ask</h2></div>
+    <div>
+      <details><summary>Do I need to buy a domain name?</summary><p>No. Your site can go live on a free address. A name of your own, like thirdchairbarbers.com, costs about $12 a year from any domain seller, and I'll connect it for you.</p></details>
+      <details><summary>Are there monthly fees?</summary><p>Not from me, and the hosting I set up is free. The only ongoing cost is your domain, if you choose to have one.</p></details>
+      <details><summary>Who writes the words?</summary><p>I do, from our 15-minute chat. You read it, and anything that doesn't sound like you gets changed.</p></details>
+      <details><summary>I don't have good photos.</summary><p>Phone photos of your work are usually enough, and I'll pick the best. Where there are gaps, I use licensed stock photos that fit.</p></details>
+      <details><summary>Can I change things later?</summary><p>Yes. Two rounds of changes are included before launch, and after that you can text me when your prices or hours change.</p></details>
+      <details><summary>How long does it take?</summary><p>A first version within a few days and live in about a week, depending on how fast we go back and forth.</p></details>
     </div>
   </div>
 </section>
 
-<section id="contact" style="padding-top:24px">
+<section id="contact" style="padding-top:0">
   <div class="wrap contact">
-    <div class="section-head">
-      <p class="eyebrow">Contact</p>
-      <h2>Let's build your site.</h2>
-      <p>Tell me a little about your business and I'll reply with ideas and next steps. No pressure, no obligation.</p>
-      <p class="direct">Or email me directly:<br><a href="mailto:jaylendgotico@gmail.com?subject=Website%20project">jaylendgotico@gmail.com</a></p>
+    <div class="head">
+      <h2>Let's get your business online.</h2>
+      <p>Tell me what you do and I'll reply with ideas and next steps, usually the same day. No pressure, no obligation.</p>
+      <div class="reach">
+        <a class="btn primary" data-phone href="sms:">Text me</a>
+        <a class="btn ghost" data-phone href="tel:" id="callBtn">Call me</a>
+        <a class="mail" href="mailto:jaylendgotico@gmail.com?subject=Website%20for%20my%20business">jaylendgotico@gmail.com</a>
+      </div>
     </div>
     <form id="contact-form">
       <div class="row">
         <label>Your name<input name="name" required autocomplete="name"></label>
-        <label>Business<input name="business" autocomplete="organization"></label>
+        <label>Business name<input name="business" autocomplete="organization"></label>
       </div>
-      <label>What do you need?
-        <select name="need">
-          <option>$150 one-page website</option>
-          <option>A bigger site (more pages)</option>
-          <option>Redesign of my current site</option>
-          <option>Not sure yet</option>
-        </select>
-      </label>
-      <label>Tell me about it<textarea name="message" required placeholder="What does your business do? What should the site help with? Any sites you like?"></textarea></label>
-      <button class="btn primary" type="submit">Send message →</button>
+      <div class="row">
+        <label>What kind of business?
+          <select name="kind">
+            <option>Barber or salon</option>
+            <option>Gym or fitness</option>
+            <option>Cleaning</option>
+            <option>Landscaping or trades</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>City<input name="city" autocomplete="address-level2" placeholder="Oakland"></label>
+      </div>
+      <label>Tell me about it<textarea name="message" required placeholder="What do you do, and what should the website help with?"></textarea></label>
+      <button class="btn primary" type="submit">Send message</button>
       <p class="form-note">This opens your email app with the message ready to send.</p>
     </form>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Jaylen</span>
+    <span>© 2026 Jaylen. Websites for Bay Area businesses.</span>
     <span><a href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">CombatLab</a> · <a href="mailto:jaylendgotico@gmail.com">Email</a></span>
   </div>
 </footer>
 
 <script>
-  // No backend on static hosting: the form composes an email in the visitor's mail app.
+  // Set PHONE to a number you're happy to publish (e.g. "+15105550100") and every Text/Call button appears.
+  const PHONE = "";
   const EMAIL = "jaylendgotico@gmail.com";
+  if (PHONE) {
+    document.documentElement.classList.add("has-phone");
+    const body = encodeURIComponent("Hi Jaylen, I saw your site. I have a ");
+    document.querySelectorAll('a[href="sms:"]').forEach((a) => (a.href = `sms:${PHONE}?&body=${body}`));
+    document.querySelectorAll('a[href="tel:"]').forEach((a) => (a.href = `tel:${PHONE}`));
+  }
+
+  // Live phone: switch which sample site runs inside it.
+  const live = document.getElementById("live");
+  document.querySelector(".switch").addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b || b.getAttribute("aria-pressed") === "true") return;
+    document.querySelectorAll(".switch button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+    live.classList.add("loading");
+    setTimeout(() => (live.src = b.dataset.src), 200);
+  });
+  live.addEventListener("load", () => live.classList.remove("loading"));
+
+  // No backend on static hosting: the form composes an email in the visitor's mail app.
   document.getElementById("contact-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const f = new FormData(e.target);
-    const subject = `Website project: ${f.get("need")}${f.get("business") ? " for " + f.get("business") : ""}`;
-    const body = `Hi Jaylen,\n\n${f.get("message")}\n\nName: ${f.get("name")}\nBusiness: ${f.get("business") || "-"}\nInterested in: ${f.get("need")}`;
+    const biz = f.get("business") || f.get("kind");
+    const subject = `Website for ${biz}${f.get("city") ? " in " + f.get("city") : ""}`;
+    const body = `Hi Jaylen,\n\n${f.get("message")}\n\nName: ${f.get("name")}\nBusiness: ${f.get("business") || "-"} (${f.get("kind")})\nCity: ${f.get("city") || "-"}`;
     location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 </script>
