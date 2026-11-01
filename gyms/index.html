@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Websites for fight gyms · Jaylen</title>
+<meta name="description" content="Websites for boxing, Muay Thai and MMA gyms that turn visitors into free-trial signups. Schedule, prices and a book-a-free-class button. From $300.">
+<meta name="theme-color" content="#f6f2ea">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Websites that fill your free-trial classes">
+<meta property="og:description" content="For boxing, Muay Thai and MMA gyms: your schedule, your prices and a button to book a free class. From $300.">
+<meta property="og:url" content="https://darkmystiic.github.io/portfolio/gyms/">
+<meta property="og:image" content="https://darkmystiic.github.io/portfolio/assets/og-gyms.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317140f'/%3E%3Ccircle cx='22' cy='22' r='4' fill='%23e4572e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f6f2ea; --card: #fffdf8; --ink: #17140f; --muted: #6b645a; --line: #e2dbcf;
+    --accent: #e4572e; --accent-deep: #c8441f; --dark: #0b0c0f;
+    --display: "Fraunces", Georgia, serif; --body: "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.04; letter-spacing: -.02em; margin: 0; font-optical-sizing: auto; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 24px; border-radius: 999px; font: 600 16px var(--body); text-decoration: none; border: 1.5px solid var(--ink); cursor: pointer; transition: transform .15s, background .15s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+
+  nav.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav.top .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
+  .logo { font-family: var(--display); font-weight: 700; font-size: 23px; text-decoration: none; }
+  .logo span { color: var(--accent); }
+  .logo small { font: 500 14px var(--body); color: var(--muted); margin-left: 10px; letter-spacing: 0; }
+  nav.top ul { display: flex; gap: 26px; list-style: none; margin: 0 0 0 auto; padding: 0; font-size: 15px; font-weight: 500; }
+  nav.top ul a { text-decoration: none; color: var(--muted); }
+  nav.top ul a:hover { color: var(--ink); }
+  nav.top .btn { min-height: 40px; padding: 0 18px; font-size: 14px; }
+
+  /* hero: copy + the Fogline sample live in a phone */
+  .hero { padding: 64px 0 88px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; }
+  .hero h1 { font-size: clamp(46px, 6.6vw, 84px); font-weight: 600; letter-spacing: -.035em; line-height: .98; }
+  .hero .lede { font-size: 20px; color: var(--muted); max-width: 38ch; margin: 26px 0 32px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero .from { margin: 26px 0 0; font-size: 15px; color: var(--muted); }
+  .hero .from b { color: var(--ink); font-weight: 600; }
+
+  .stage { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .phone { --k: .853; position: relative; width: calc(375px * var(--k) + 24px); padding: 12px; border-radius: 52px; background: #1b1a18; box-shadow: 0 1px 0 2px #2c2a27 inset, 0 40px 80px -30px rgba(23, 20, 15, .45), 0 18px 36px -18px rgba(23, 20, 15, .3); }
+  .phone::before { content: ""; position: absolute; top: 22px; left: 50%; width: 92px; height: 26px; margin-left: -46px; border-radius: 20px; background: #1b1a18; z-index: 2; }
+  .screen { position: relative; width: calc(375px * var(--k)); height: calc(780px * var(--k)); border-radius: 40px; overflow: hidden; background: #fff; }
+  .screen .status { position: absolute; inset: 0 0 auto; height: 36px; background: #000; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 2px 26px 0; font: 600 12px var(--body); z-index: 1; }
+  .screen .status i { width: 22px; height: 10px; border: 1.5px solid #fff; border-radius: 3px; position: relative; }
+  .screen .status i::after { content: ""; position: absolute; inset: 1.5px 5px 1.5px 1.5px; background: #fff; border-radius: 1px; }
+  .screen iframe { position: absolute; top: 36px; left: 0; width: 375px; height: calc((780px * var(--k) - 36px) / var(--k)); border: 0; transform: scale(var(--k)); transform-origin: 0 0; }
+  .stage .hint { font-size: 14px; color: var(--muted); margin: 0; text-align: center; max-width: 34ch; }
+
+  section { padding: 96px 0; }
+  .head { max-width: 660px; }
+  .head h2 { font-size: clamp(36px, 4.8vw, 56px); }
+  .head p { color: var(--muted); font-size: 18px; margin: 18px 0 0; max-width: 54ch; }
+
+  /* where trials get lost: an unanswered DM vs a booked class */
+  .leak { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }
+  .thread { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 18px 18px 22px; font-family: -apple-system, "Segoe UI", system-ui, sans-serif; min-height: 300px; display: flex; flex-direction: column; }
+  .thread .who { display: flex; align-items: center; gap: 10px; padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid #eee; font-size: 15px; font-weight: 600; }
+  .thread .who i { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #2b2b2b, #6b6b6b); }
+  .thread .who small { display: block; font-weight: 400; color: #8e8e8e; font-size: 12px; }
+  .when { text-align: center; font-size: 12px; color: #8e8e8e; margin: 4px 0 12px; }
+  .bub { max-width: 82%; padding: 10px 14px; border-radius: 20px; font-size: 15px; line-height: 1.4; margin-bottom: 6px; }
+  .bub.me { align-self: flex-end; background: #3d6af2; color: #fff; border-bottom-right-radius: 6px; }
+  .bub.them { align-self: flex-start; background: #efefef; color: #111; border-bottom-left-radius: 6px; }
+  .seen { align-self: flex-end; font-size: 12px; color: #8e8e8e; margin: 2px 4px 0; }
+  .silence { margin-top: auto; text-align: center; color: #b0b0b0; font-size: 13px; padding-top: 22px; }
+  .steps-mini { list-style: none; padding: 0; margin: 0 0 14px; display: grid; gap: 8px; }
+  .steps-mini li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: #333; }
+  .steps-mini li::before { content: "✓"; width: 22px; height: 22px; border-radius: 50%; background: #e7f6ec; color: #1f9d55; font-size: 12px; font-weight: 700; display: grid; place-items: center; flex: none; }
+  .verdict { margin: 16px 4px 0; font-size: 16px; }
+  .verdict b { font-family: var(--display); font-size: 21px; display: block; margin-bottom: 2px; }
+
+  /* packages */
+  .tiers { display: grid; grid-template-columns: 1fr 1.08fr 1fr; gap: 20px; margin-top: 52px; align-items: stretch; }
+  .tier { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 30px 26px; display: flex; flex-direction: column; position: relative; }
+  .tier.pick { background: var(--paper); border: 2px solid var(--ink); box-shadow: 0 30px 60px -40px rgba(23, 20, 15, .45); }
+  .tier .ribbon { position: absolute; top: -14px; left: 24px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 999px; }
+  .tier h3 { font-size: 26px; }
+  .tier .for { color: var(--muted); font-size: 15px; margin: 6px 0 18px; min-height: 48px; }
+  .tier .amt { font-family: var(--display); font-size: 60px; font-weight: 600; line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+  .tier .amt sup { font-size: 26px; vertical-align: 24px; margin-right: 2px; }
+  .tier .amt small { font: 500 15px var(--body); letter-spacing: 0; color: var(--muted); margin-left: 6px; }
+  .tier .time { font-size: 14px; color: var(--muted); margin: 10px 0 22px; }
+  .tier ul { list-style: none; padding: 0; margin: 0 0 26px; display: grid; gap: 11px; font-size: 15px; }
+  .tier li { padding-left: 26px; position: relative; }
+  .tier li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; }
+  .tier li.plus { font-weight: 600; }
+  .tier li.plus::before { content: "+"; }
+  .tier .btn { margin-top: auto; width: 100%; }
+  .care { margin-top: 24px; display: flex; gap: 18px; align-items: center; justify-content: space-between; flex-wrap: wrap; border: 1px dashed #cfc6b7; border-radius: 18px; padding: 18px 22px; }
+  .care b { font-family: var(--display); font-size: 20px; }
+  .care span { color: var(--muted); font-size: 15px; }
+  .terms { margin: 18px 0 0; font-size: 15px; color: var(--muted); }
+
+  /* member math */
+  .math { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .calc { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 30px; display: grid; gap: 22px; }
+  .calc label { display: grid; gap: 10px; font-size: 15px; font-weight: 600; }
+  .calc .lbl { display: flex; justify-content: space-between; gap: 12px; }
+  .calc output { font-variant-numeric: tabular-nums; font-weight: 700; }
+  input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; margin: 0; }
+  .answer { border-top: 1px solid var(--line); padding-top: 22px; }
+  .answer .big { font-family: var(--display); font-size: clamp(44px, 5vw, 64px); font-weight: 600; line-height: 1; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+  .answer p { margin: 10px 0 0; color: var(--muted); font-size: 16px; }
+  .answer p b { color: var(--ink); }
+  .payback { font-size: 22px !important; color: var(--ink) !important; font-family: var(--display); font-weight: 600; margin-top: 14px !important; }
+  .payback em { font-style: normal; color: var(--accent); }
+  .small-print { font-size: 13px !important; }
+
+  /* why me */
+  .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .why article { border-top: 2px solid var(--ink); padding-top: 20px; }
+  .why h3 { font-size: 24px; margin-bottom: 10px; }
+  .why p { color: var(--muted); margin: 0; font-size: 16px; }
+  .why a { font-weight: 600; color: var(--ink); }
+
+  /* process */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 48px 0 0; padding: 0; list-style: none; counter-reset: s; }
+  .steps li { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 26px; counter-increment: s; }
+  .steps li::before { content: counter(s); font-family: var(--display); font-size: 44px; line-height: 1; color: var(--accent); display: block; margin-bottom: 12px; }
+  .steps h3 { font-size: 24px; margin-bottom: 8px; }
+  .steps p { color: var(--muted); margin: 0; font-size: 16px; }
+
+  /* questions */
+  .faq { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; }
+  details { border-bottom: 1px solid var(--line); }
+  details:first-child { border-top: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 20px 40px 20px 0; position: relative; font-family: var(--display); font-size: 22px; font-weight: 600; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 4px; top: 16px; font: 400 28px var(--body); color: var(--accent); transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin: -4px 0 22px; color: var(--muted); max-width: 58ch; }
+
+  /* contact */
+  .contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; }
+  .reach { display: grid; gap: 12px; margin-top: 28px; justify-items: start; }
+  .reach .mail { font-weight: 600; }
+  form { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 32px; display: grid; gap: 16px; }
+  form label { font-size: 14px; font-weight: 600; display: grid; gap: 6px; }
+  form input, form select, form textarea { font: 16px var(--body); padding: 13px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); width: 100%; }
+  form input:focus, form select:focus, form textarea:focus { outline: none; border-color: var(--ink); }
+  textarea { min-height: 110px; resize: vertical; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-note { font-size: 13px; color: var(--muted); margin: 0; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(40px) rotate(2deg); } to { opacity: 1; transform: none; } }
+  .phone { animation: rise .9s cubic-bezier(.2, .8, .2, 1) .15s both; }
+
+  @media (max-width: 960px) {
+    nav.top ul, .logo small { display: none; }
+    nav.top .btn { margin-left: auto; }
+    .hero .wrap, .math, .contact, .faq { grid-template-columns: 1fr; }
+    .hero .wrap { gap: 48px; }
+    .compare, .why, .steps { grid-template-columns: 1fr; }
+    .tiers { grid-template-columns: 1fr; max-width: 560px; }
+    .tier .for { min-height: 0; }
+    .math { gap: 36px; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 16px; }
+    nav.top .wrap { height: 58px; }
+    .hero { padding: 36px 0 64px; }
+    .hero h1 { font-size: 46px; }
+    .hero .lede { font-size: 18px; margin: 18px 0 26px; }
+    .hero .ctas .btn { flex: 1 1 100%; }
+    .phone { --k: .72; border-radius: 44px; padding: 10px; width: calc(375px * var(--k) + 20px); }
+    .phone::before { top: 18px; width: 76px; height: 22px; margin-left: -38px; }
+    .screen { border-radius: 34px; }
+    section { padding: 64px 0; }
+    .head p { font-size: 16px; }
+    .thread { min-height: 0; }
+    .tier { padding: 28px 20px 22px; }
+    .care .btn { width: 100%; }
+    .calc { padding: 22px 18px; }
+    .row { grid-template-columns: 1fr; }
+    form { padding: 22px 18px; }
+    summary { font-size: 19px; }
+    footer .wrap { flex-direction: column; gap: 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .phone { animation: none; }
+    .btn { transition: none; }
+    .btn:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="../">Jaylen<span>.</span><small>for fight gyms</small></a>
+    <ul>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#math">Member math</a></li>
+      <li><a href="#questions">Questions</a></li>
+    </ul>
+    <a class="btn primary" href="#contact">Book a call</a>
+  </div>
+</nav>
+
+<main id="top">
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Websites that fill your free-trial classes.</h1>
+      <p class="lede">For boxing, Muay Thai and MMA gyms. Visitors see your schedule, your prices and a button to book a free class, so they show up instead of sending a DM and disappearing.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#contact">Book a free 20-min call</a>
+        <a class="btn ghost" href="#packages">See packages</a>
+      </div>
+      <p class="from"><b>From $300.</b> Gyms anywhere in the US, by video call and email.</p>
+    </div>
+    <div class="stage">
+      <div class="phone">
+        <div class="screen"><div class="status" aria-hidden="true"><span>9:41</span><i></i></div><iframe src="../samples/gym/" title="Fogline, a sample fight-gym website, running on a phone" loading="eager"></iframe></div>
+      </div>
+      <p class="hint">A real sample gym site. Tap a day on the schedule, then “Try it free”.</p>
+    </div>
+  </div>
+</header>
+
+<section class="leak" id="why">
+  <div class="wrap">
+    <div class="head">
+      <h2>Where your free trials get lost.</h2>
+      <p>Most people who want to try a fight gym are nervous beginners. If the only way to find out the price or the schedule is to message you, a lot of them never hear back in time, or never ask.</p>
+    </div>
+    <div class="compare">
+      <div>
+        <div class="thread" aria-label="Example: a message to a gym with no reply">
+          <div class="who"><i></i><div>your_gym<small>Instagram</small></div></div>
+          <div class="when">Tue 9:14 PM</div>
+          <div class="bub me">hey how much is a month? and is it ok if i've never boxed before</div>
+          <div class="bub me">do you have beginner classes</div>
+          <span class="seen">Seen</span>
+          <div class="silence">No reply by Thursday</div>
+        </div>
+        <p class="verdict"><b>Without a trial page</b>They sign up at whichever gym answered first.</p>
+      </div>
+      <div>
+        <div class="thread" aria-label="Example: a visitor booking a free class on a gym website">
+          <div class="who"><i></i><div>yourgym.com<small>Website</small></div></div>
+          <ul class="steps-mini">
+            <li>Sees beginner classes, no sparring</li>
+            <li>Sees $159/mo, no contract</li>
+            <li>Picks Thursday, 6:00 pm Boxing basics</li>
+            <li>Books the free class in 20 seconds</li>
+          </ul>
+          <div class="bub them">See you Thursday at 6, Sam. Gloves and wraps will be ready at the desk.</div>
+          <span class="seen" style="align-self:flex-start">Booking confirmed</span>
+        </div>
+        <p class="verdict"><b>With a trial page</b>Every answer before they ask, and a booked class while they're still keen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="packages">
+  <div class="wrap">
+    <div class="head">
+      <h2>Three packages. Fixed prices.</h2>
+      <p>You know the full price before anything starts. Half to begin, half when it goes live.</p>
+    </div>
+    <div class="tiers">
+      <article class="tier">
+        <h3>Starter</h3>
+        <p class="for">A clean one-page site for a gym that has nothing online yet.</p>
+        <div class="amt"><sup>$</sup>300</div>
+        <p class="time">Live in about a week</p>
+        <ul>
+          <li>One page: classes, schedule, prices, coaches, location</li>
+          <li>A free-trial button that texts, emails or DMs you</li>
+          <li>Made for phones first</li>
+          <li>Hosting set up with no hosting bill, your domain connected</li>
+          <li>Two rounds of changes</li>
+        </ul>
+        <a class="btn ghost" href="#contact" data-pkg="Starter ($300)">Start with Starter</a>
+      </article>
+      <article class="tier pick">
+        <span class="ribbon">Recommended</span>
+        <h3>Gym Growth</h3>
+        <p class="for">For gyms that want the site to bring in trials every week.</p>
+        <div class="amt"><sup>$</sup>1,200</div>
+        <p class="time">Live in about two weeks</p>
+        <ul>
+          <li class="plus">Everything in Starter</li>
+          <li>Pages for each program: boxing, Muay Thai, kids, fitness</li>
+          <li>A weekly schedule visitors tap through, opening on today</li>
+          <li>Any class books straight into a free-trial form that reaches your phone</li>
+          <li>Google Business Profile cleaned up and linked</li>
+          <li>Set up so Google can show it in local searches</li>
+          <li>Three rounds of changes</li>
+        </ul>
+        <a class="btn primary" href="#contact" data-pkg="Gym Growth ($1,200)">Book a call about Growth</a>
+      </article>
+      <article class="tier">
+        <h3>Custom</h3>
+        <p class="for">For gyms with booking software, promos or several locations.</p>
+        <div class="amt"><sup>$</sup>3,000<small>and up</small></div>
+        <p class="time">Quoted after a call</p>
+        <ul>
+          <li class="plus">Everything in Gym Growth</li>
+          <li>Connect the booking or membership software you already use</li>
+          <li>Online waivers and new-member intake</li>
+          <li>Landing pages for ads, promos and fight-camp events</li>
+          <li>Multiple locations or coaches' profiles</li>
+        </ul>
+        <a class="btn ghost" href="#contact" data-pkg="Custom ($3,000+)">Talk about Custom</a>
+      </article>
+    </div>
+    <div class="care">
+      <div><b>Optional care plan, $50/mo</b><br><span>I keep the site online and make changes when your schedule, prices or coaches change. Cancel any time.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="leak" id="math">
+  <div class="wrap math">
+    <div class="head">
+      <h2>Member math.</h2>
+      <p>A website is cheap next to what one member is worth to you. Move the sliders to your gym's numbers and see how many new members it takes to pay for the site.</p>
+      <p class="small-print">Your numbers, not a promise. I can't guarantee members, but I can make it a lot easier for interested people to sign up.</p>
+    </div>
+    <div class="calc" id="calc">
+      <label><span class="lbl">Membership per month <output id="o-price"></output></span><input type="range" id="price" min="60" max="300" step="5" value="150"></label>
+      <label><span class="lbl">Months the average member stays <output id="o-stay"></output></span><input type="range" id="stay" min="2" max="24" step="1" value="8"></label>
+      <label><span class="lbl">Extra free trials a month from the site <output id="o-trials"></output></span><input type="range" id="trials" min="1" max="20" step="1" value="4"></label>
+      <label><span class="lbl">Trials that join <output id="o-join"></output></span><input type="range" id="join" min="10" max="70" step="5" value="30"></label>
+      <div class="answer" aria-live="polite">
+        <div class="big" id="worth"></div>
+        <p>is what <b>one member</b> is worth to you over their membership.</p>
+        <p class="payback" id="payback"></p>
+        <p id="year"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="head"><h2>Built by someone who gets your gym.</h2></div>
+    <div class="why">
+      <article><h3>I love this sport</h3><p>Boxing and Muay Thai are my thing. I know what a beginner worries about before their first class (sparring, fitness, gear) and the site answers it before they have to ask.</p></article>
+      <article><h3>I've shipped for fighters</h3><p>I built <a href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">CombatLab</a>, a Boxing and Muay Thai training app. Its website lets you hear a real training round before the app is even out.</p></article>
+      <article><h3>You deal with me</h3><p>No agency, no account manager. The person on the call is the person building your site and answering your emails afterwards.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="process" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2>How it works</h2></div>
+    <ol class="steps">
+      <li><h3>A 20-minute call</h3><p>How new members find you now, what your classes and prices are, and which package fits. Or we do it all by email if you prefer.</p></li>
+      <li><h3>You see it first</h3><p>After the deposit you get a link to a working first version within days, then rounds of changes until it feels like your gym.</p></li>
+      <li><h3>It goes live</h3><p>I put it online, connect your domain and make sure trial bookings reach your phone. Then the second half is due.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="questions" style="padding-top:0">
+  <div class="wrap faq">
+    <div class="head"><h2>Questions gym owners ask</h2></div>
+    <div>
+      <details><summary>I already have a website.</summary><p>That's fine. I rebuild it so it works on phones and books trials, and keep your domain so nothing breaks for people who already have the link.</p></details>
+      <details><summary>Can it work with my booking software?</summary><p>Usually. Many gym booking and membership tools have a booking link or widget I can put on the site. Connecting deeper than that is part of the Custom package, and I'll check what yours allows on the call.</p></details>
+      <details><summary>Are there monthly fees?</summary><p>None required. The hosting I set up is free and your domain is about $12 a year. The $50/mo care plan is optional, for gyms that would rather text me changes than do them.</p></details>
+      <details><summary>Who writes it, and what about photos?</summary><p>I write it from the call and you check that it sounds like you. Phone photos and videos of real classes beat stock photos for a gym, and I'll tell you exactly which shots to take.</p></details>
+      <details><summary>You're not local. Does that matter?</summary><p>No. I work with gyms anywhere in the US over video call and email, and you see every step as a working link.</p></details>
+      <details><summary>Do I have to get on a call?</summary><p>No. The call is the fastest way to get it right, but everything can be done by email.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="wrap contact">
+    <div class="head">
+      <h2>Book a free 20-minute call.</h2>
+      <p>Tell me about your gym and a few times that work. I'll reply with a time and a quick look at how your gym shows up online now, usually the same day.</p>
+      <div class="reach">
+        <span>Or email me directly:</span>
+        <a class="mail" href="mailto:jaylendgotico@gmail.com?subject=Website%20for%20my%20gym">jaylendgotico@gmail.com</a>
+      </div>
+    </div>
+    <form id="contact-form">
+      <div class="row">
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Gym name<input name="gym" required autocomplete="organization"></label>
+      </div>
+      <div class="row">
+        <label>City and state<input name="city" autocomplete="address-level2" placeholder="Austin, TX"></label>
+        <label>Current website <input name="site" type="url" inputmode="url" placeholder="Leave blank if none"></label>
+      </div>
+      <div class="row">
+        <label>Package
+          <select name="pkg" id="pkg">
+            <option>Not sure yet</option>
+            <option>Starter ($300)</option>
+            <option>Gym Growth ($1,200)</option>
+            <option>Custom ($3,000+)</option>
+          </select>
+        </label>
+        <label>Good times for a call<input name="times" placeholder="Weekdays after 2pm ET"></label>
+      </div>
+      <label>Anything else?<textarea name="message" placeholder="Programs you run, how new members find you now, what's not working"></textarea></label>
+      <button class="btn primary" type="submit">Request my call</button>
+      <p class="form-note">This opens your email app with the message ready to send.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jaylen. Websites for fight gyms. Fogline is a made-up sample gym.</span>
+    <span><a href="../">All work</a> · <a href="https://darkmystiic.github.io/combatlab/" target="_blank" rel="noopener">CombatLab</a> · <a href="mailto:jaylendgotico@gmail.com">Email</a></span>
+  </div>
+</footer>
+
+<script>
+  const EMAIL = "jaylendgotico@gmail.com";
+  const $ = (id) => document.getElementById(id);
+  const usd = (n) => "$" + Math.round(n).toLocaleString("en-US");
+
+  // Member math: value of one member = price × months stayed; packages paid back in members.
+  const GROWTH = 1200;
+  function calc() {
+    const price = +$("price").value, stay = +$("stay").value, trials = +$("trials").value, join = +$("join").value / 100;
+    $("o-price").textContent = usd(price);
+    $("o-stay").textContent = stay + " months";
+    $("o-trials").textContent = trials;
+    $("o-join").textContent = Math.round(join * 100) + "%";
+    const worth = price * stay, perMonth = trials * join;
+    const need = Math.ceil(GROWTH / worth);
+    $("worth").textContent = usd(worth);
+    $("payback").innerHTML = `Gym Growth pays for itself after <em>${need} new member${need === 1 ? "" : "s"}</em>.`;
+    $("year").innerHTML = `At ${trials} extra trial${trials === 1 ? "" : "s"} a month, that's about <b>${(perMonth * 12).toFixed(perMonth * 12 < 10 ? 1 : 0)} new members a year</b>, worth <b>${usd(perMonth * 12 * worth)}</b> over their memberships.`;
+  }
+  $("calc").addEventListener("input", calc);
+  calc();
+
+  // Package buttons preselect the package in the form.
+  document.querySelectorAll("[data-pkg]").forEach((a) => a.addEventListener("click", () => ($("pkg").value = a.dataset.pkg)));
+
+  // No backend on static hosting: the form composes an email in the visitor's mail app.
+  $("contact-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const subject = `Call about a website for ${f.get("gym")}${f.get("city") ? " (" + f.get("city") + ")" : ""}`;
+    const body = `Hi Jaylen,\n\n${f.get("message") || "I'd like to talk about a website for my gym."}\n\nName: ${f.get("name")}\nGym: ${f.get("gym")}\nCity: ${f.get("city") || "-"}\nCurrent website: ${f.get("site") || "none"}\nPackage: ${f.get("pkg")}\nGood times for a call: ${f.get("times") || "-"}`;
+    location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+</body>
+</html>

@@ -28,6 +28,15 @@
 | Fogline Boxing & Muay Thai, San Francisco | book a free first class | chalk + ink + cobalt, Archivo Expanded, interactive weekly schedule |
 | Brightwell Home Cleaning, Peninsula | get quote requests | white + deep teal + mint, Figtree, instant price estimator |
 
+## Fight-gym page (`gyms/`, 2026-11-01)
+**Job:** a fight-gym owner books a 20-minute call (email form; no booking tool yet).
+**Reader:** owner of a boxing, Muay Thai or MMA gym anywhere in the US (owner: clients "anywhere"). Reads it from an email or DM link, on a phone.
+**5-second test:** what = websites that fill free-trial classes; for whom = fight gyms; action = book a call.
+**Offer:** Starter $300 · Gym Growth $1,200 (recommended) · Custom from $3,000 · optional care plan $50/mo. 50% to start, 50% at launch.
+**Memorable element:** "Member math": the owner's own membership price, retention and trial numbers → what one member is worth and how many new members pay for the site. Labelled as their numbers, not a promise.
+**Proof:** the Fogline sample live in the phone, CombatLab, and Jaylen's own love of boxing and Muay Thai.
+**Order:** hero + phone → where trials get lost (unanswered DM vs a booked class) → packages → member math → why me → how it works → questions → contact.
+
 ## Done means
 - Passes every line of the vault's web benchmark (Engineering.md § Website & app quality benchmark), rubric ≥ 4.
 - No sideways scroll at 375 px; checked at 375 / 768 / 1440.
