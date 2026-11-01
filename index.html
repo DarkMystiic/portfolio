@@ -37,9 +37,6 @@
   .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
   .btn.primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
   .btn.ghost { background: transparent; color: var(--ink); }
-  [data-phone] { display: none !important; }
-  .has-phone [data-phone] { display: inline-flex !important; }
-  .has-phone [data-nophone] { display: none !important; }
 
   /* nav */
   nav.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
@@ -238,8 +235,7 @@
       <li><a href="#offer">Price</a></li>
       <li><a href="#questions">Questions</a></li>
     </ul>
-    <a class="btn primary" data-phone href="sms:">Text me</a>
-    <a class="btn primary" data-nophone href="#contact">Get in touch</a>
+    <a class="btn primary" href="#contact">Get in touch</a>
   </div>
 </nav>
 
@@ -251,8 +247,7 @@
       <p class="lede">I build websites for Bay Area barbers, gyms, cleaners and trades, so the people searching find your prices, your photos and a button to book. One page, live in 7 days, $150.</p>
       <div class="ctas">
         <a class="btn primary" href="#samples">See the sample sites</a>
-        <a class="btn ghost" data-phone href="sms:">Text me a question</a>
-        <a class="btn ghost" data-nophone href="#contact">Ask me a question</a>
+        <a class="btn ghost" href="#contact">Ask me a question</a>
       </div>
       <p class="local">Based in the Bay Area. You deal with me, not an agency.</p>
     </div>
@@ -417,7 +412,7 @@
   <div class="wrap">
     <div class="head"><h2>How it works</h2></div>
     <ol class="steps">
-      <li><h3>We talk for 15 minutes</h3><p>By text, phone or email. What you do, what you charge, and what customers ask you most.</p></li>
+      <li><h3>Tell me about your business</h3><p>By email. What you do, what you charge, and what customers ask you most.</p></li>
       <li><h3>I design and build it</h3><p>You get a link to a first version within a few days, then two rounds of changes.</p></li>
       <li><h3>You go live</h3><p>I put it online, connect your domain and hand everything over. It's yours.</p></li>
     </ol>
@@ -430,9 +425,9 @@
     <div>
       <details><summary>Do I need to buy a domain name?</summary><p>No. Your site can go live on a free address. A name of your own, like thirdchairbarbers.com, costs about $12 a year from any domain seller, and I'll connect it for you.</p></details>
       <details><summary>Are there monthly fees?</summary><p>Not from me, and the hosting I set up is free. The only ongoing cost is your domain, if you choose to have one.</p></details>
-      <details><summary>Who writes the words?</summary><p>I do, from our 15-minute chat. You read it, and anything that doesn't sound like you gets changed.</p></details>
+      <details><summary>Who writes the words?</summary><p>I do, from what you tell me about your business. You read it, and anything that doesn't sound like you gets changed.</p></details>
       <details><summary>I don't have good photos.</summary><p>Phone photos of your work are usually enough, and I'll pick the best. Where there are gaps, I use licensed stock photos that fit.</p></details>
-      <details><summary>Can I change things later?</summary><p>Yes. Two rounds of changes are included before launch, and after that you can text me when your prices or hours change.</p></details>
+      <details><summary>Can I change things later?</summary><p>Yes. Two rounds of changes are included before launch, and after that you can email me when your prices or hours change.</p></details>
       <details><summary>How long does it take?</summary><p>A first version within a few days and live in about a week, depending on how fast we go back and forth.</p></details>
     </div>
   </div>
@@ -444,8 +439,7 @@
       <h2>Let's get your business online.</h2>
       <p>Tell me what you do and I'll reply with ideas and next steps, usually the same day. No pressure, no obligation.</p>
       <div class="reach">
-        <a class="btn primary" data-phone href="sms:">Text me</a>
-        <a class="btn ghost" data-phone href="tel:" id="callBtn">Call me</a>
+        <span>Or email me directly:</span>
         <a class="mail" href="mailto:jaylendgotico@gmail.com?subject=Website%20for%20my%20business">jaylendgotico@gmail.com</a>
       </div>
     </div>
@@ -482,15 +476,7 @@
 </footer>
 
 <script>
-  // Set PHONE to a number you're happy to publish (e.g. "+15105550100") and every Text/Call button appears.
-  const PHONE = "";
   const EMAIL = "jaylendgotico@gmail.com";
-  if (PHONE) {
-    document.documentElement.classList.add("has-phone");
-    const body = encodeURIComponent("Hi Jaylen, I saw your site. I have a ");
-    document.querySelectorAll('a[href="sms:"]').forEach((a) => (a.href = `sms:${PHONE}?&body=${body}`));
-    document.querySelectorAll('a[href="tel:"]').forEach((a) => (a.href = `tel:${PHONE}`));
-  }
 
   // Live phone: switch which sample site runs inside it.
   const live = document.getElementById("live");
