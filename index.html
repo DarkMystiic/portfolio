@@ -133,20 +133,35 @@
 
   /* offer */
   .offer { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .offer-box { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; margin-top: 48px; }
-  .price { border: 2px solid var(--ink); border-radius: 24px; padding: 36px; background: var(--paper); position: relative; }
-  .price .ribbon { position: absolute; top: -14px; left: 28px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 999px; }
-  .price .amount { font-family: var(--display); font-size: 96px; line-height: 1; font-weight: 600; letter-spacing: -.04em; }
-  .price .amount sup { font-size: 40px; vertical-align: 38px; margin-right: 2px; }
-  .price .per { color: var(--muted); margin: 10px 0 28px; }
-  .price .btn { width: 100%; }
-  .price small { display: block; color: var(--muted); font-size: 14px; margin-top: 14px; text-align: center; }
-  .includes { list-style: none; padding: 0; margin: 0; }
-  .includes li { display: grid; grid-template-columns: 28px 1fr; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line); }
-  .includes li:last-child { border-bottom: 0; }
-  .includes .tick { width: 28px; height: 28px; border-radius: 50%; background: #fbe3da; color: var(--accent); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
-  .includes b { display: block; }
-  .includes span { color: var(--muted); font-size: 15px; }
+  /* three packages: the middle one is the recommended pick */
+  .tiers { display: grid; grid-template-columns: 1fr 1.08fr 1fr; gap: 20px; margin-top: 52px; align-items: stretch; }
+  .tier { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 30px 26px; display: flex; flex-direction: column; position: relative; }
+  .tier.pick { background: #fff; border: 2px solid var(--ink); box-shadow: 0 30px 60px -40px rgba(23, 20, 15, .45); }
+  .tier .ribbon { position: absolute; top: -14px; left: 24px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 999px; }
+  .tier h3 { font-size: 26px; }
+  .tier .for { color: var(--muted); font-size: 15px; margin: 6px 0 18px; min-height: 48px; }
+  .tier .amt { font-family: var(--display); font-size: 60px; font-weight: 600; line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+  .tier .amt sup { font-size: 26px; vertical-align: 24px; margin-right: 2px; }
+  .tier .amt small { font: 500 15px var(--body); letter-spacing: 0; color: var(--muted); margin-left: 6px; }
+  .tier .time { font-size: 14px; color: var(--muted); margin: 10px 0 22px; }
+  .tier ul { list-style: none; padding: 0; margin: 0 0 26px; display: grid; gap: 11px; font-size: 15px; }
+  .tier li { padding-left: 26px; position: relative; }
+  .tier li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; }
+  .tier li.plus { font-weight: 600; }
+  .tier li.plus::before { content: "+"; }
+  .tier .btn { margin-top: auto; width: 100%; }
+  .care { margin-top: 24px; border: 1px dashed #cfc6b7; border-radius: 18px; padding: 18px 22px; }
+  .care b { font-family: var(--display); font-size: 20px; }
+  .care span { color: var(--muted); font-size: 15px; }
+  .redo { margin-top: 20px; background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 26px; display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+  .redo h3 { font-size: 24px; }
+  .redo ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: r; }
+  .redo li { counter-increment: r; font-size: 15px; }
+  .redo li b { display: block; margin-bottom: 4px; }
+  .redo li b::before { content: counter(r) ". "; color: var(--accent); }
+  .redo li span { color: var(--muted); }
+  .picked { margin: 0; font-size: 15px; color: var(--muted); }
+  .picked b { color: var(--ink); }
 
   /* process (a real sequence, so it's numbered) */
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 48px 0 0; padding: 0; list-style: none; counter-reset: s; }
@@ -187,7 +202,11 @@
   @media (max-width: 960px) {
     nav.top ul { display: none; }
     nav.top .btn { margin-left: auto; }
-    .hero .wrap, .sample, .sample:nth-child(even), .offer-box, .contact, .faq, .feature { grid-template-columns: 1fr; }
+    .hero .wrap, .sample, .sample:nth-child(even), .contact, .faq, .feature { grid-template-columns: 1fr; }
+    .tiers { grid-template-columns: 1fr; max-width: 560px; }
+    .tier .for { min-height: 0; }
+    .redo, .redo ol { grid-template-columns: 1fr; }
+    .redo { max-width: 560px; gap: 16px; }
     .hero .wrap { gap: 48px; }
     .sample { gap: 28px; }
     .sample .shot { order: -1; }
@@ -212,8 +231,7 @@
     .feature { border-radius: 20px; }
     .feature h3 { font-size: 32px; }
     .feature .links .btn { flex: 1 1 100%; }
-    .price { padding: 32px 20px 24px; }
-    .price .amount { font-size: 76px; }
+    .tier { padding: 28px 20px 22px; }
     .row { grid-template-columns: 1fr; }
     form { padding: 22px 18px; }
     summary { font-size: 19px; }
@@ -234,7 +252,7 @@
     <a class="logo" href="#top">Jaylen<span>.</span></a>
     <ul>
       <li><a href="#samples">Sample sites</a></li>
-      <li><a href="#offer">Price</a></li>
+      <li><a href="#offer">Packages</a></li>
       <li><a href="gyms/">For gyms</a></li>
       <li><a href="#questions">Questions</a></li>
     </ul>
@@ -388,25 +406,66 @@
 <section class="offer" id="offer">
   <div class="wrap">
     <div class="head">
-      <h2>Your website, done properly, from $300.</h2>
-      <p>The same care as the samples above, at a fixed price you know before anything starts. Half to begin, half when it goes live.</p>
+      <h2>Three packages. Fixed prices.</h2>
+      <p>The same care as the samples above, at a price you know before anything starts. Half to begin, half when it goes live.</p>
     </div>
-    <div class="offer-box">
-      <div class="price">
-        <span class="ribbon">Starter</span>
-        <div class="amount"><sup>$</sup>300</div>
-        <p class="per">One time. Hosting is free; an optional $50/mo care plan covers changes.</p>
-        <a class="btn primary" href="#contact">Start my website</a>
-        <small>Need more pages, online booking or a redesign? Ask, and I'll quote it up front. Fight gyms: <a href="gyms/">see gym packages</a>.</small>
-      </div>
-      <ul class="includes">
-        <li><span class="tick" aria-hidden="true">✓</span><div><b>A one-page site designed for your business</b><span>Up to 5 sections, like prices, about, photos, reviews and contact. Not a template.</span></div></li>
-        <li><span class="tick" aria-hidden="true">✓</span><div><b>Made for phones first</b><span>Checked on phone, tablet and desktop sizes before you see it.</span></div></li>
-        <li><span class="tick" aria-hidden="true">✓</span><div><b>Call, text, book or email buttons</b><span>Whatever your customers already use to reach you.</span></div></li>
-        <li><span class="tick" aria-hidden="true">✓</span><div><b>Hosting set up, with no hosting bill</b><span>I'll connect your own domain if you have one (about $12 a year, paid by you).</span></div></li>
-        <li><span class="tick" aria-hidden="true">✓</span><div><b>Ready for Google and link previews</b><span>Page titles, descriptions and the preview card that shows when you text the link.</span></div></li>
-        <li><span class="tick" aria-hidden="true">✓</span><div><b>Two rounds of changes</b><span>We adjust it together until you're happy with it.</span></div></li>
-      </ul>
+    <div class="tiers">
+      <article class="tier">
+        <h3>Starter</h3>
+        <p class="for">A clean one-page site for a business that has nothing online yet.</p>
+        <div class="amt"><sup>$</sup>300</div>
+        <p class="time">Live in about a week</p>
+        <ul>
+          <li>One page, up to 5 sections: services, prices, photos, reviews, contact</li>
+          <li>Designed for your business, not a template</li>
+          <li>Call, text, book or email buttons, made for phones first</li>
+          <li>Hosting set up with no hosting bill, your domain connected</li>
+          <li>Ready for Google and link previews</li>
+          <li>Two rounds of changes</li>
+        </ul>
+        <a class="btn ghost" href="#contact" data-pkg="Starter ($300)">Start with Starter</a>
+      </article>
+      <article class="tier pick">
+        <span class="ribbon">Most popular</span>
+        <h3>Growth</h3>
+        <p class="for">For businesses that want the site to bring in customers every week.</p>
+        <div class="amt"><sup>$</sup>1,200</div>
+        <p class="time">Live in about two weeks</p>
+        <ul>
+          <li class="plus">Everything in Starter</li>
+          <li>Up to 6 pages: a page per service, plus about, gallery and contact</li>
+          <li>A booking or quote-request form that reaches your phone</li>
+          <li>An instant price estimate, if your prices can be worked out up front</li>
+          <li>Google Business Profile cleaned up and linked</li>
+          <li>Each service set up to show in local searches</li>
+          <li>Three rounds of changes</li>
+        </ul>
+        <a class="btn primary" href="#contact" data-pkg="Growth ($1,200)">Book a call about Growth</a>
+      </article>
+      <article class="tier">
+        <h3>Custom</h3>
+        <p class="for">For payments online, your own software or several locations.</p>
+        <div class="amt"><sup>$</sup>3,000<small>and up</small></div>
+        <p class="time">Quoted after a call</p>
+        <ul>
+          <li class="plus">Everything in Growth</li>
+          <li>Connect the booking, payment or customer software you already use</li>
+          <li>Take deposits or payments online</li>
+          <li>Customer intake forms and automatic follow-up emails</li>
+          <li>Landing pages for ads, promos and seasonal offers</li>
+          <li>Multiple locations or staff profiles</li>
+        </ul>
+        <a class="btn ghost" href="#contact" data-pkg="Custom ($3,000+)">Talk about Custom</a>
+      </article>
+    </div>
+    <div class="care"><b>Optional care plan, $50/mo</b><br><span>I keep the site online and make changes when your services, prices or hours change. Cancel any time.</span></div>
+    <div class="redo">
+      <h3>Already have a website?</h3>
+      <ol>
+        <li><b>Same packages, same prices.</b><span>I rebuild it on the new design and bring over your text, photos and prices.</span></li>
+        <li><b>Your old site stays up.</b><span>You review the new one on a private link while the old one keeps working.</span></li>
+        <li><b>Switch when you approve.</b><span>Same domain, no downtime, and people with your old link land on the new site.</span></li>
+      </ol>
     </div>
   </div>
 </section>
@@ -416,7 +475,7 @@
     <div class="head"><h2>How it works</h2></div>
     <ol class="steps">
       <li><h3>Tell me about your business</h3><p>By email. What you do, what you charge, and what customers ask you most.</p></li>
-      <li><h3>I design and build it</h3><p>You get a link to a first version within a few days, then two rounds of changes.</p></li>
+      <li><h3>I design and build it</h3><p>After the deposit you get a link to a first version within days, then rounds of changes until it's right.</p></li>
       <li><h3>You go live</h3><p>I put it online, connect your domain and hand everything over. It's yours.</p></li>
     </ol>
   </div>
@@ -427,12 +486,14 @@
     <div class="head"><h2>Questions owners ask</h2></div>
     <div>
       <details><summary>Do I need to buy a domain name?</summary><p>No. Your site can go live on a free address. A name of your own, like thirdchairbarbers.com, costs about $12 a year from any domain seller, and I'll connect it for you.</p></details>
-      <details><summary>I already have a website.</summary><p>Same price. I rebuild it on the new design, your old site stays up while you review the new one on a private link, and we switch over on your domain once you approve it.</p></details>
+      <details><summary>I already have a website.</summary><p>Same packages and prices. I rebuild it on the new design, your old site stays up while you review the new one on a private link, and we switch over on your domain once you approve it.</p></details>
+      <details><summary>Which package do I need?</summary><p>If people mostly need to see what you do and how to reach you, Starter. If you want them to book or request a quote from the site, Growth. If you need payments or software connected, Custom. Not sure? Ask, and I'll tell you honestly, including when the cheaper one is enough.</p></details>
+      <details><summary>What counts as a round of changes?</summary><p>You send me one list of everything you want different (words, photos, colours, order) and I make all of it. Starter includes two rounds, Growth three. Fixing a mistake of mine never counts as a round.</p></details>
       <details><summary>Are there monthly fees?</summary><p>None required. The hosting I set up is free and your domain is about $12 a year. If you'd rather text me changes than make them yourself, there's an optional $50/mo care plan.</p></details>
       <details><summary>Who writes the words?</summary><p>I do, from what you tell me about your business. You read it, and anything that doesn't sound like you gets changed.</p></details>
       <details><summary>I don't have good photos.</summary><p>Phone photos of your work are usually enough, and I'll pick the best. Where there are gaps, I use licensed stock photos that fit.</p></details>
-      <details><summary>Can I change things later?</summary><p>Yes. Two rounds of changes are included before launch. After that, the care plan covers changes, or I quote small changes before I start.</p></details>
-      <details><summary>How long does it take?</summary><p>A first version within a few days and live in about a week, depending on how fast we go back and forth.</p></details>
+      <details><summary>Can I change things later?</summary><p>Yes. Rounds of changes are included before launch. After that, the care plan covers changes, or I quote small changes before I start.</p></details>
+      <details><summary>How long does it take?</summary><p>Starter is live in about a week and Growth in about two, depending on how fast we go back and forth. Custom gets a timeline with its quote.</p></details>
     </div>
   </div>
 </section>
@@ -465,6 +526,7 @@
         <label>City<input name="city" autocomplete="address-level2" placeholder="Oakland"></label>
       </div>
       <label>Tell me about it<textarea name="message" required placeholder="What do you do, and what should the website help with?"></textarea></label>
+      <p class="picked" id="picked" hidden></p>
       <button class="btn primary" type="submit">Send message</button>
       <p class="form-note">This opens your email app with the message ready to send.</p>
     </form>
@@ -493,13 +555,22 @@
   });
   live.addEventListener("load", () => live.classList.remove("loading"));
 
+  // A package button remembers the choice and shows it above the submit button.
+  let pkg = "";
+  const picked = document.getElementById("picked");
+  document.querySelectorAll("[data-pkg]").forEach((a) => a.addEventListener("click", () => {
+    pkg = a.dataset.pkg;
+    picked.innerHTML = `Asking about <b>${pkg}</b>`;
+    picked.hidden = false;
+  }));
+
   // No backend on static hosting: the form composes an email in the visitor's mail app.
   document.getElementById("contact-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const f = new FormData(e.target);
     const biz = f.get("business") || f.get("kind");
-    const subject = `Website for ${biz}${f.get("city") ? " in " + f.get("city") : ""}`;
-    const body = `Hi Jaylen,\n\n${f.get("message")}\n\nName: ${f.get("name")}\nBusiness: ${f.get("business") || "-"} (${f.get("kind")})\nCity: ${f.get("city") || "-"}`;
+    const subject = `Website for ${biz}${f.get("city") ? " in " + f.get("city") : ""}${pkg ? " · " + pkg : ""}`;
+    const body = `Hi Jaylen,\n\n${f.get("message")}\n\nName: ${f.get("name")}\nBusiness: ${f.get("business") || "-"} (${f.get("kind")})\nCity: ${f.get("city") || "-"}${pkg ? "\nPackage: " + pkg : ""}`;
     location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 </script>
