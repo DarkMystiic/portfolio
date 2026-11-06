@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found · Jaylen</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f6f2ea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317140f'/%3E%3Ccircle cx='22' cy='22' r='4' fill='%23e4572e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --paper: #f6f2ea; --card: #fffdf8; --ink: #17140f; --muted: #6b645a; --line: #e2dbcf; --accent: #e4572e; --accent-deep: #c8441f; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--paper); color: var(--ink); font: 17px/1.6 "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; padding: 32px 16px; }
+  main { max-width: 560px; }
+  .logo { font: 700 23px "Fraunces", Georgia, serif; text-decoration: none; color: inherit; }
+  .logo span, .code { color: var(--accent); }
+  .code { font: 600 15px "Inter", sans-serif; letter-spacing: .08em; margin: 56px 0 12px; }
+  h1 { font: 600 clamp(42px, 8vw, 64px)/1 "Fraunces", Georgia, serif; letter-spacing: -.035em; margin: 0; }
+  p { color: var(--muted); margin: 20px 0 32px; font-size: 18px; }
+  .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font: 600 16px "Inter", sans-serif; text-decoration: none; border: 1.5px solid var(--ink); color: var(--ink); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  @media (max-width: 600px) { .btn { flex: 1 1 100%; } }
+</style>
+</head>
+<body>
+<main>
+  <a class="logo" href="/" data-home>Jaylen<span>.</span></a>
+  <p class="code">404</p>
+  <h1>That page isn't here.</h1>
+  <p>The link may be old or mistyped. Everything I offer is on the home page: sample sites, packages and how to reach me.</p>
+  <div class="ctas">
+    <a class="btn primary" href="/" data-home>Go to the home page</a>
+    <a class="btn" href="/#offer" data-home="#offer">See packages</a>
+  </div>
+</main>
+<script>
+  // Cloudflare serves the site at "/", the GitHub backup at "/portfolio/".
+  const base = location.hostname.endsWith("github.io") ? "/portfolio/" : "/";
+  document.querySelectorAll("[data-home]").forEach((a) => (a.href = base + (a.dataset.home || "")));
+</script>
+</body>
+</html>
